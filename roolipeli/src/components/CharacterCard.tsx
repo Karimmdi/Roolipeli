@@ -45,6 +45,49 @@ function getTheme(ammatti: string) {
   return { theme: DEFAULT_THEME, symbol: DEFAULT_SYMBOL }
 }
 
+const KYKYLAJI_CONFIG: Record<string, { ensisijainen: string[]; toissijainen: string[]; negatiivinen: string[] }> = {
+  ketteryys: { ensisijainen: ['NPP'], toissijainen: ['VMA'], negatiivinen: ['KOK'] },
+  kommunikointi: { ensisijainen: ['ALY'], toissijainen: ['MHT', 'ULK'], negatiivinen: [] },
+  tieto: { ensisijainen: ['ALY'], toissijainen: [], negatiivinen: [] },
+  manipulointi: { ensisijainen: ['ALY', 'NPP'], toissijainen: ['VMA'], negatiivinen: [] },
+  havainto: { ensisijainen: ['ALY'], toissijainen: ['MHT', 'RR'], negatiivinen: [] },
+  salavihkaisuus: { ensisijainen: ['NPP'], toissijainen: [], negatiivinen: ['KOK', 'MHT'] },
+  taikuus: { ensisijainen: ['ALY', 'MHT'], toissijainen: ['NPP'], negatiivinen: [] },
+}
+
+const KYVYT_LISTA = [
+  { nimi: 'Heitto', perus: 25, kategoria: 'ketteryys' }, { nimi: 'Hyppy', perus: 25, kategoria: 'ketteryys' }, { nimi: 'Kiipeily', perus: 40, kategoria: 'ketteryys' },
+  { nimi: 'Ratsastus', perus: 5, kategoria: 'ketteryys' }, { nimi: 'Uinti', perus: 15, kategoria: 'ketteryys' }, { nimi: 'Väistö', perus: 5, kategoria: 'ketteryys' },
+  { nimi: 'Puhetaito', perus: 5, kategoria: 'kommunikointi' }, { nimi: 'Suostuttelu', perus: 5, kategoria: 'kommunikointi' }, { nimi: 'Laulu', perus: 5, kategoria: 'kommunikointi' },
+  { nimi: 'Ensiapu', perus: 10, kategoria: 'tieto' }, { nimi: 'Eläintieto', perus: 5, kategoria: 'tieto' }, { nimi: 'Ihmistieto', perus: 5, kategoria: 'tieto' },
+  { nimi: 'Kasvitieto', perus: 5, kategoria: 'tieto' }, { nimi: 'Yleistieto', perus: 5, kategoria: 'tieto' },
+  { nimi: 'Aseeton taistelu', perus: 0, kategoria: 'manipulointi' }, { nimi: 'Kätke', perus: 5, kategoria: 'manipulointi' }, { nimi: 'Laadi', perus: 5, kategoria: 'manipulointi' }, { nimi: 'Silmänkääntö', perus: 5, kategoria: 'manipulointi' },
+  { nimi: 'Etsintä', perus: 25, kategoria: 'havainto' }, { nimi: 'Havaitse', perus: 25, kategoria: 'havainto' }, { nimi: 'Kuuntelu', perus: 25, kategoria: 'havainto' },
+  { nimi: 'Hiipiminen', perus: 10, kategoria: 'salavihkaisuus' }, { nimi: 'Piileskely', perus: 10, kategoria: 'salavihkaisuus' },
+]
+
+function calculateCategoryBonus(c: CharacterData, kategoria: keyof typeof KYKYLAJI_CONFIG) {
+  const saannot = KYKYLAJI_CONFIG[kategoria]
+  let bonus = 0
+
+  saannot.ensisijainen.forEach(om => {
+    const arvo = Number((c as any)[om] ?? 0)
+    if (!Number.isNaN(arvo)) bonus += arvo - 10
+  })
+
+  saannot.toissijainen.forEach(om => {
+    const arvo = Number((c as any)[om] ?? 0)
+    if (!Number.isNaN(arvo)) bonus += Math.floor((arvo - 10) / 2)
+  })
+
+  saannot.negatiivinen.forEach(om => {
+    const arvo = Number((c as any)[om] ?? 0)
+    if (!Number.isNaN(arvo)) bonus -= arvo - 10
+  })
+
+  return bonus
+}
+
 export interface CharacterData {
   id: string
   nimi: string
@@ -178,6 +221,28 @@ export default function CharacterCard({ character: c, onOpenDetail, onEdit, onDe
             <div className="h-1.5 bg-forest-900 rounded-full overflow-hidden">
               <div className="h-full bg-red-500/60 rounded-full w-full" />
             </div>
+          </div>
+        )}
+
+        {KYVYT_LISTA.length > 0 && (
+          <div className="grid grid-cols-3 gap-2 mb-3 text-xs font-mono">
+            {KYVYT_LISTA
+              .map(({ nimi, perus, kategoria }) => {
+                const learned = c.kyvyt?.[nimi] || 0
+                const bonus = calculateCategoryBonus(c, kategoria as keyof typeof KYKYLAJI_CONFIG)
+                const total = Math.max(0, perus + learned + bonus)
+                return { nimi, total, learned, bonus }
+              })
+              .sort((a, b) => b.total - a.total)
+              .slice(0, 3)
+              .map(skill => (
+                <div key={skill.nimi} className="text-center p-2 rounded-xl bg-black/20 border border-white/5">
+                  <div className="font-mono text-base font-bold" style={{ color: theme.accent }}>
+                    {skill.total}%
+                  </div>
+                  <div className="text-forest-500 mt-0.5 truncate">{skill.nimi}</div>
+                </div>
+              ))}
           </div>
         )}
 

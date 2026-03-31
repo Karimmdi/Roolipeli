@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { X, ChevronLeft, ChevronRight, Check, Sparkles, ChevronDown, ChevronUp } from 'lucide-react'
 import { CharacterData } from './CharacterCard'
 
@@ -26,6 +26,16 @@ const STEPS = [
   { label: 'Tausta'       },
 ]
 
+const KYKYLAJI_CONFIG: Record<string, { ensisijainen: string[]; toissijainen: string[]; negatiivinen: string[] }> = {
+  ketteryys: { ensisijainen: ['NPP'], toissijainen: ['VMA'], negatiivinen: ['KOK'] },
+  kommunikointi: { ensisijainen: ['ALY'], toissijainen: ['MHT', 'ULK'], negatiivinen: [] },
+  tieto: { ensisijainen: ['ALY'], toissijainen: [], negatiivinen: [] },
+  manipulointi: { ensisijainen: ['ALY', 'NPP'], toissijainen: ['VMA'], negatiivinen: [] },
+  havainto: { ensisijainen: ['ALY'], toissijainen: ['MHT', 'RR'], negatiivinen: [] },
+  salavihkaisuus: { ensisijainen: ['NPP'], toissijainen: [], negatiivinen: ['KOK', 'MHT'] },
+  taikuus: { ensisijainen: ['ALY', 'MHT'], toissijainen: ['NPP'], negatiivinen: [] },
+}
+
 const KULTTUURIT = [
   'Barbaarivyö', 'Caladramaa', 'Carmania', 'Dara Happa', 'Eol', 'Esrolia',
   'Januben kaupunkivaltiot', 'Jonatela', 'Kralorela', 'Loskalm (Hrestoli)',
@@ -46,14 +56,14 @@ const ROOLIT = [
 ]
 
 const KYVYT_LISTA = [
-  { nimi: 'Heitto', perus: 25 }, { nimi: 'Hyppy', perus: 25 }, { nimi: 'Kiipeily', perus: 40 },
-  { nimi: 'Ratsastus', perus: 5 }, { nimi: 'Uinti', perus: 15 }, { nimi: 'Väistö', perus: 5 },
-  { nimi: 'Puhetaito', perus: 5 }, { nimi: 'Suostuttelu', perus: 5 }, { nimi: 'Laulu', perus: 5 },
-  { nimi: 'Ensiapu', perus: 10 }, { nimi: 'Eläintieto', perus: 5 }, { nimi: 'Ihmistieto', perus: 5 },
-  { nimi: 'Kasvitieto', perus: 5 }, { nimi: 'Yleistieto', perus: 5 }, { nimi: 'Aseeton taistelu', perus: 0 },
-  { nimi: 'Kätke', perus: 5 }, { nimi: 'Laadi', perus: 5 }, { nimi: 'Silmänkääntö', perus: 5 },
-  { nimi: 'Etsintä', perus: 25 }, { nimi: 'Havaitse', perus: 25 }, { nimi: 'Kuuntelu', perus: 25 },
-  { nimi: 'Hiipiminen', perus: 10 }, { nimi: 'Piileskely', perus: 10 },
+  { nimi: 'Heitto', perus: 25, kategoria: 'ketteryys' }, { nimi: 'Hyppy', perus: 25, kategoria: 'ketteryys' }, { nimi: 'Kiipeily', perus: 40, kategoria: 'ketteryys' },
+  { nimi: 'Ratsastus', perus: 5, kategoria: 'ketteryys' }, { nimi: 'Uinti', perus: 15, kategoria: 'ketteryys' }, { nimi: 'Väistö', perus: 5, kategoria: 'ketteryys' },
+  { nimi: 'Puhetaito', perus: 5, kategoria: 'kommunikointi' }, { nimi: 'Suostuttelu', perus: 5, kategoria: 'kommunikointi' }, { nimi: 'Laulu', perus: 5, kategoria: 'kommunikointi' },
+  { nimi: 'Ensiapu', perus: 10, kategoria: 'tieto' }, { nimi: 'Eläintieto', perus: 5, kategoria: 'tieto' }, { nimi: 'Ihmistieto', perus: 5, kategoria: 'tieto' },
+  { nimi: 'Kasvitieto', perus: 5, kategoria: 'tieto' }, { nimi: 'Yleistieto', perus: 5, kategoria: 'tieto' },
+  { nimi: 'Aseeton taistelu', perus: 0, kategoria: 'manipulointi' }, { nimi: 'Kätke', perus: 5, kategoria: 'manipulointi' }, { nimi: 'Laadi', perus: 5, kategoria: 'manipulointi' }, { nimi: 'Silmänkääntö', perus: 5, kategoria: 'manipulointi' },
+  { nimi: 'Etsintä', perus: 25, kategoria: 'havainto' }, { nimi: 'Havaitse', perus: 25, kategoria: 'havainto' }, { nimi: 'Kuuntelu', perus: 25, kategoria: 'havainto' },
+  { nimi: 'Hiipiminen', perus: 10, kategoria: 'salavihkaisuus' }, { nimi: 'Piileskely', perus: 10, kategoria: 'salavihkaisuus' },
 ]
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -76,9 +86,35 @@ interface Props {
   existingCharacter?: CharacterData | null
 }
 
+type SkillCategory = 'ketteryys' | 'kommunikointi' | 'tieto' | 'manipulointi' | 'havainto' | 'salavihkaisuus' | 'taikuus'
+
+interface WizardForm {
+  nimi: string
+  pelaaja: string
+  ika: string
+  sukupuoli: string
+  ammatti: string
+  kotimaa: string
+  isanAmmatti: string
+  aidanAmmatti: string
+  kulttuuri: string
+  kultti: string
+  uskonnollinenRooli: string
+  tausta: string
+  pointMethod?: string
+  VMA: number
+  RR: number
+  KOK: number
+  ALY: number
+  MHT: number
+  NPP: number
+  ULK: number
+  kyvyt: Record<string, number>
+}
+
 export default function CharacterWizard({ onClose, onSave, existingCharacter }: Props) {
   const [step, setStep] = useState(0)
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<WizardForm>({
     nimi: existingCharacter?.nimi || '',
     pelaaja: existingCharacter?.pelaaja || '',
     ika: existingCharacter?.ika || '',
@@ -98,9 +134,48 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
     MHT: existingCharacter?.MHT || 10,
     NPP: existingCharacter?.NPP || 10,
     ULK: existingCharacter?.ULK || 10,
+    kyvyt: existingCharacter?.kyvyt || {},
   })
 
   const set = (key: string, val: any) => setForm(f => ({ ...f, [key]: val }))
+
+  const setKyky = (nimi: string, arvo: number) => {
+    setForm(f => ({ ...f, kyvyt: { ...f.kyvyt, [nimi]: arvo } }))
+  }
+
+  const kykylajibonukset = useMemo(() => {
+    const laskeBonus = (kategoria: keyof typeof KYKYLAJI_CONFIG) => {
+      const saannot = KYKYLAJI_CONFIG[kategoria]
+      let bonus = 0
+
+      saannot.ensisijainen.forEach(om => {
+        const arvo = Number((form as any)[om])
+        if (!Number.isNaN(arvo)) bonus += arvo - 10
+      })
+
+      saannot.toissijainen.forEach(om => {
+        const arvo = Number((form as any)[om])
+        if (!Number.isNaN(arvo)) bonus += Math.floor((arvo - 10) / 2)
+      })
+
+      saannot.negatiivinen.forEach(om => {
+        const arvo = Number((form as any)[om])
+        if (!Number.isNaN(arvo)) bonus -= arvo - 10
+      })
+
+      return bonus
+    }
+
+    return {
+      ketteryys: laskeBonus('ketteryys'),
+      kommunikointi: laskeBonus('kommunikointi'),
+      tieto: laskeBonus('tieto'),
+      manipulointi: laskeBonus('manipulointi'),
+      havainto: laskeBonus('havainto'),
+      salavihkaisuus: laskeBonus('salavihkaisuus'),
+      taikuus: laskeBonus('taikuus'),
+    }
+  }, [form.VMA, form.RR, form.KOK, form.ALY, form.MHT, form.NPP, form.ULK])
 
   const handleSave = () => {
     onSave({
@@ -296,18 +371,34 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
           {/* Step 3 — Skills */}
           {step === 2 && (
             <Section title="Kyvyt">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
-                {KYVYT_LISTA.map(({ nimi, perus }) => (
-                  <div key={nimi} className="flex items-center gap-2 py-0.5">
-                    <span className="text-forest-400 text-sm flex-1 font-body">{nimi}</span>
-                    <span className="text-forest-600 text-xs w-6 text-right">{perus}</span>
-                    <span className="text-forest-500 text-xs">+</span>
-                    <input type="number" min={0} defaultValue={0}
-                      className="w-14 bg-forest-900 border border-forest-700 rounded px-1 py-0.5
-                                 text-parchment font-mono text-xs text-center focus:border-rune focus:outline-none" />
-                    <span className="text-rune text-sm font-bold w-8 text-right">{perus}%</span>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                {KYVYT_LISTA.map(({ nimi, perus, kategoria }) => {
+                  const lisapisteet = form.kyvyt[nimi] || 0
+                  const perusSumma = perus + lisapisteet
+                  const bonus = kykylajibonukset[kategoria] || 0
+                  const lopullinenArvo = perusSumma > 0 ? Math.max(0, perusSumma + bonus) : 0
+                  const bonusStr = bonus >= 0 ? `+${bonus}` : `${bonus}`
+
+                  return (
+                    <div key={nimi} className="flex items-center gap-2 py-1 border-b border-forest-700/20 last:border-0">
+                      <span className="text-forest-400 text-sm flex-1 font-body" title={`Kategoria: ${kategoria}`}>{nimi}</span>
+                      <span className="text-forest-600 text-xs w-6 text-right" title="Perusprosentti">{perus}</span>
+                      <span className="text-forest-500 text-xs">+</span>
+                      <input
+                        type="number"
+                        min={0}
+                        value={lisapisteet}
+                        onChange={e => setKyky(nimi, parseInt(e.target.value, 10) || 0)}
+                        className="w-14 bg-forest-900 border border-forest-700 rounded px-1 py-0.5
+                                   text-parchment font-mono text-xs text-center focus:border-rune focus:outline-none"
+                        title="Opetellut lisäpisteet"
+                      />
+                      <span className="text-forest-500 text-xs" title={`Kykylajibonus (${kategoria})`}>{`(${bonusStr})`}</span>
+                      <span className="text-forest-500 text-xs">=</span>
+                      <span className="text-rune text-sm font-bold w-8 text-right">{lopullinenArvo}%</span>
+                    </div>
+                  )
+                })}
               </div>
             </Section>
           )}
