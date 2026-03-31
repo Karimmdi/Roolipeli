@@ -27,11 +27,7 @@ const STEPS = [
 ]
 
 const KULTTUURIT = [
-  'Barbaarivyö', 'Caladramaa', 'Carmania', 'Dara Happa', 'Eol', 'Esrolia',
-  'Januben kaupunkivaltiot', 'Jonatela', 'Kralorela', 'Loskalm (Hrestoli)',
-  'Peloria', 'Pent', 'Prax', 'Ramalia', 'Rathorela', 'Ruohomaat',
-  'Safelster', 'Seshnela', 'Shan Shan', 'Sodan Kuningaskunta',
-  'Tastolar', 'Teshnos', 'Trowjangin saari', 'Vadelin saaret', 'Yggin saaret',
+  'Barbaarivyö', 'Caladramaa',
 ]
 
 const KULTIT = [
@@ -143,7 +139,7 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
             </button>
           </div>
 
-          {/* Step progress */}
+          {/* Step progress 
           <div className="relative">
             <div className="flex justify-between mb-2">
               {STEPS.map((s, i) => (
@@ -163,7 +159,7 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
             <div className="absolute top-3.5 left-3.5 right-3.5 h-0.5 bg-forest-800 -z-0">
               <div className="h-full bg-rune transition-all duration-500 rounded-full" style={{ width: `${progressPct}%` }} />
             </div>
-          </div>
+          </div>*/}
         </div>
 
         <div className="px-8 py-6 space-y-2">
