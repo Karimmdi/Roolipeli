@@ -1,37 +1,49 @@
 import React from 'react'
-import { X, Edit2, Sword, Shield, Zap, Heart, Brain } from 'lucide-react'
+import { X, Edit2, Sword, Shield, Zap, Heart, Brain, Wind } from 'lucide-react'
 import { CharacterData } from './CharacterCard'
+import { calculateCategoryBonus, KykyKategoria } from '../utils/kyvyt'
+import meleeData from '../data/meleeaseet.json'
+import heittoData from '../data/heittoaseet.json'
+import henkiData from '../data/henkitaikuus.json'
+import riimuData from '../data/riimutaikuus.json'
+import type { MeleeAse, HeittoAse, HenkiTaika, RiimuTaika } from '../data/types'
 
-const ALL_SKILLS: Record<string, { nimi: string; perus: number }[]> = {
-  'Ketteryys':      [
+const MELEE_ASEET   = meleeData  as MeleeAse[]
+const HEITTO_ASEET  = heittoData as HeittoAse[]
+const HENKI_TAIKUUS = henkiData  as HenkiTaika[]
+const RIIMU_TAIKUUS = riimuData  as RiimuTaika[]
+
+// Skill list with category keys — richer than the wizard's editable list
+const ALL_SKILLS: { kategoria: KykyKategoria; display: string; skills: { nimi: string; perus: number }[] }[] = [
+  { kategoria: 'ketteryys',      display: 'Ketteryys',      skills: [
     { nimi: 'Heitto', perus: 25 }, { nimi: 'Hyppy', perus: 25 }, { nimi: 'Kiipeily', perus: 40 },
     { nimi: 'Ratsastus', perus: 5 }, { nimi: 'Uinti', perus: 15 }, { nimi: 'Veneily', perus: 5 }, { nimi: 'Väistö', perus: 5 },
-  ],
-  'Kommunikointi':  [
+  ]},
+  { kategoria: 'kommunikointi',  display: 'Kommunikointi',  skills: [
     { nimi: 'Kielen puhuminen (oma)', perus: 30 }, { nimi: 'Kielen puhuminen (vieras)', perus: 0 },
     { nimi: 'Laulu', perus: 5 }, { nimi: 'Puhetaito', perus: 5 }, { nimi: 'Suostuttelu', perus: 5 },
-  ],
-  'Tieto':          [
-    { nimi: 'Ammatti', perus: 10 }, { nimi: 'Arvon arviointi', perus: 5 }, { nimi: 'Aseeton taistelu', perus: 0 },
-    { nimi: 'Ensiapu', perus: 10 }, { nimi: 'Laivankäsittely', perus: 0 }, { nimi: 'Lue/kirjoita kieli', perus: 0 },
+  ]},
+  { kategoria: 'tieto',          display: 'Tieto',          skills: [
+    { nimi: 'Ammatti', perus: 10 }, { nimi: 'Arvon arviointi', perus: 5 }, { nimi: 'Ensiapu', perus: 10 },
+    { nimi: 'Laivankäsittely', perus: 0 }, { nimi: 'Lue/kirjoita kieli', perus: 0 },
     { nimi: 'Eläintieto', perus: 5 }, { nimi: 'Ihmistieto', perus: 5 }, { nimi: 'Kasvitieto', perus: 5 },
     { nimi: 'Mineraalitieto', perus: 5 }, { nimi: 'Yleistieto', perus: 5 },
-  ],
-  'Manipulointi':   [
-    { nimi: 'Kätke', perus: 5 }, { nimi: 'Laadi', perus: 5 },
+  ]},
+  { kategoria: 'manipulointi',   display: 'Manipulointi',   skills: [
+    { nimi: 'Aseeton taistelu', perus: 0 }, { nimi: 'Kätke', perus: 5 }, { nimi: 'Laadi', perus: 5 },
     { nimi: 'Silmänkääntö', perus: 5 }, { nimi: 'Soita instrumentti', perus: 0 },
-  ],
-  'Havainto':       [
+  ]},
+  { kategoria: 'havainto',       display: 'Havainto',       skills: [
     { nimi: 'Etsintä', perus: 25 }, { nimi: 'Havaitse', perus: 25 },
     { nimi: 'Jäljitys', perus: 5 }, { nimi: 'Kuuntelu', perus: 25 },
-  ],
-  'Salavihkaisuus': [
+  ]},
+  { kategoria: 'salavihkaisuus', display: 'Salavihkaisuus', skills: [
     { nimi: 'Hiipiminen', perus: 10 }, { nimi: 'Piileskely', perus: 10 },
-  ],
-  'Taikuus':        [
+  ]},
+  { kategoria: 'taikuus',        display: 'Taikuus',        skills: [
     { nimi: 'Seremonia', perus: 0 }, { nimi: 'Kutsuminen', perus: 0 }, { nimi: 'Intensiteetti', perus: 0 },
-  ],
-}
+  ]},
+]
 
 const PROFESSION_THEME: Record<string, any> = {
   'soturi':     { accent: '#e05555', from: '#3d1a1a', to: '#1a0c0c', border: '#7a2020' },
@@ -82,6 +94,15 @@ interface Props {
 
 export default function CharacterDetailModal({ character: c, onClose, onEdit }: Props) {
   const theme = getTheme(c.ammatti || '')
+  const attrs = { VMA: c.VMA ?? 0, RR: c.RR ?? 0, KOK: c.KOK ?? 0, ALY: c.ALY ?? 0, MHT: c.MHT ?? 0, NPP: c.NPP ?? 0, ULK: c.ULK ?? 0 }
+
+  const selMelee  = (c.valitutMeleeAseet    || []).map(id => MELEE_ASEET.find(a => a.id === id)).filter(Boolean) as MeleeAse[]
+  const selHeitto = (c.valitutHeittoAseet   || []).map(id => HEITTO_ASEET.find(a => a.id === id)).filter(Boolean) as HeittoAse[]
+  const selHenki  = (c.valitutHenkitaikuudet || []).map(id => HENKI_TAIKUUS.find(t => t.id === id)).filter(Boolean) as HenkiTaika[]
+  const selRiimu  = (c.valitutRiimutaikuudet || []).map(id => RIIMU_TAIKUUS.find(t => t.id === id)).filter(Boolean) as RiimuTaika[]
+
+  const hasAseet   = selMelee.length > 0 || selHeitto.length > 0
+  const hasTaikuus = selHenki.length > 0  || selRiimu.length > 0
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto"
@@ -156,43 +177,163 @@ export default function CharacterDetailModal({ character: c, onClose, onEdit }: 
           {/* Derived stats */}
           <Section title="Johdetut arvot" accent={theme.accent}>
             <div className="grid grid-cols-6 gap-2 mb-3">
-              <StatBlock label="Vahinko" value="—"    icon={Sword} />
-              <StatBlock label="Liike"   value="3"    icon={Zap} />
-              <StatBlock label="IH"      value={c.IH} icon={Zap}    color="text-yellow-400" />
-              <StatBlock label="KP"      value={c.KP} icon={Heart}  color="text-red-400" />
-              <StatBlock label="TP"      value={c.TP} icon={Brain}  color="text-blue-400" />
-              <StatBlock label="VP"      value="—"    icon={Shield} color="text-orange-400" />
+              <StatBlock label="Vahinko" value={c.vahinkomuutos ?? '—'} icon={Sword} />
+              <StatBlock label="Liike"   value={c.liike ?? 3}           icon={Wind} />
+              <StatBlock label="IH"      value={c.IH}                   icon={Zap}    color="text-yellow-400" />
+              <StatBlock label="KP"      value={c.KP}                   icon={Heart}  color="text-red-400" />
+              <StatBlock label="TP"      value={c.TP}                   icon={Brain}  color="text-blue-400" />
+              <StatBlock label="VP"      value={c.vasymyspisteet ?? '—'} icon={Shield} color="text-orange-400" />
+            </div>
+            {c.kestopisteetKohdittain && (
+              <div className="mt-3">
+                <p className="text-forest-500 text-xs font-mono uppercase tracking-widest mb-2">Kestopisteet kohdittain</p>
+                <div className="grid grid-cols-5 gap-2">
+                  {([
+                    ['Jalat',  c.kestopisteetKohdittain.jalat],
+                    ['Vatsa',  c.kestopisteetKohdittain.vatsa],
+                    ['Rinta',  c.kestopisteetKohdittain.rinta],
+                    ['Kädet',  c.kestopisteetKohdittain.kadet],
+                    ['Pää',    c.kestopisteetKohdittain.paa],
+                  ] as [string, number][]).map(([label, val]) => (
+                    <div key={label} className="text-center p-2 rounded-xl bg-black/20 border border-white/5">
+                      <div className="font-mono text-base font-bold text-red-400">{val}</div>
+                      <div className="text-forest-400 text-xs font-mono mt-0.5">{label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </Section>
+
+          {/* All skills by category with attribute bonuses applied */}
+          <Section title="Kaikki kyvyt" accent={theme.accent}>
+            <div className="grid grid-cols-2 gap-x-12">
+              {ALL_SKILLS.map(({ kategoria, display, skills }) => {
+                const bonus = calculateCategoryBonus(attrs, kategoria)
+                const bonusStr = bonus >= 0 ? `+${bonus}` : `${bonus}`
+                return (
+                  <div key={kategoria} className="mb-4">
+                    <p className="font-display text-xs tracking-widest uppercase mb-1.5 flex items-center gap-2"
+                       style={{ color: theme.accent }}>
+                      {display}
+                      <span className="font-mono text-forest-500 normal-case tracking-normal" style={{ fontSize: '0.65rem' }}>({bonusStr})</span>
+                    </p>
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-xs font-mono">
+                      {skills.map(({ nimi, perus }) => {
+                        const learned = (c.kyvyt?.[nimi] || 0) as number
+                        const total   = Math.max(0, perus + learned + bonus)
+                        return (
+                          <div key={nimi} className="flex justify-between gap-2">
+                            <span className="text-forest-400 truncate">{nimi}</span>
+                            <span className={`font-bold ${learned > 0 ? '' : 'text-forest-600'}`}
+                                  style={{ color: learned > 0 ? theme.accent : undefined }}>
+                              {total}%
+                            </span>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </Section>
 
-          {/* All skills by category */}
-          <Section title="Kaikki kyvyt" accent={theme.accent}>
-            <div className="grid grid-cols-2 gap-x-12">
-              {Object.entries(ALL_SKILLS).map(([category, skillList]) => (
-                <div key={category} className="mb-4">
-                  <p className="font-display text-xs tracking-widest uppercase mb-1.5"
-                     style={{ color: theme.accent }}>
-                    {category}
-                  </p>
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-xs font-mono">
-                    {skillList.map(({ nimi, perus }) => {
-                      const learned = (c.kyvyt?.[nimi] || 0) as number
-                      const total = perus + learned
-                      return (
-                        <div key={nimi} className="flex justify-between gap-2">
-                          <span className="text-forest-400 truncate">{nimi}</span>
-                          <span className={`font-bold ${learned > 0 ? '' : 'text-forest-600'}`}
-                                style={{ color: learned > 0 ? theme.accent : undefined }}>
-                            {total}%
-                          </span>
-                        </div>
-                      )
-                    })}
+          {/* Equipment */}
+          {hasAseet && (
+            <Section title="Aseet" accent={theme.accent}>
+              {selMelee.length > 0 && (
+                <div className="mb-4">
+                  <p className="text-forest-500 text-xs font-mono uppercase tracking-widest mb-2">Lähitaistelu</p>
+                  <div className="grid grid-cols-[1fr_auto_auto_auto_auto_auto] gap-x-4 gap-y-1 text-xs font-mono">
+                    <span className="text-forest-600">Nimi</span>
+                    <span className="text-forest-600">Tyyppi</span>
+                    <span className="text-forest-600">Vahinko</span>
+                    <span className="text-forest-600">ENC</span>
+                    <span className="text-forest-600">Suoj.</span>
+                    <span className="text-forest-600">Peru%</span>
+                    {selMelee.map(a => (
+                      <React.Fragment key={a.id}>
+                        <span className="text-parchment font-body text-sm">{a.nimi}</span>
+                        <span className="text-forest-400">{a.aselaji}</span>
+                        <span style={{ color: theme.accent }}>{a.vahinko}</span>
+                        <span className="text-forest-400">{a.enc}</span>
+                        <span className="text-forest-400">{a.suojapisteet ?? '—'}</span>
+                        <span className="text-forest-400">{a.perusPrs}%</span>
+                      </React.Fragment>
+                    ))}
                   </div>
                 </div>
-              ))}
-            </div>
-          </Section>
+              )}
+              {selHeitto.length > 0 && (
+                <div>
+                  <p className="text-forest-500 text-xs font-mono uppercase tracking-widest mb-2">Heittoaseet</p>
+                  <div className="grid grid-cols-[1fr_auto_auto_auto_auto] gap-x-4 gap-y-1 text-xs font-mono">
+                    <span className="text-forest-600">Nimi</span>
+                    <span className="text-forest-600">Vahinko</span>
+                    <span className="text-forest-600">Kanto n/m</span>
+                    <span className="text-forest-600">ENC</span>
+                    <span className="text-forest-600">Peru%</span>
+                    {selHeitto.map(a => (
+                      <React.Fragment key={a.id}>
+                        <span className="text-parchment font-body text-sm">{a.nimi}</span>
+                        <span style={{ color: theme.accent }}>{a.vahinko}</span>
+                        <span className="text-forest-400">{a.normaaliKanto}/{a.maksimiKanto}m</span>
+                        <span className="text-forest-400">{a.enc}</span>
+                        <span className="text-forest-400">{a.perusPrs}%</span>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </Section>
+          )}
+
+          {/* Magic */}
+          {hasTaikuus && (
+            <Section title="Taikuus" accent={theme.accent}>
+              {selHenki.length > 0 && (
+                <div className="mb-4">
+                  <p className="text-forest-500 text-xs font-mono uppercase tracking-widest mb-2">Henkitaikuus</p>
+                  <div className="grid grid-cols-[1fr_auto_auto_auto] gap-x-6 gap-y-1 text-xs font-mono">
+                    <span className="text-forest-600">Loitsu</span>
+                    <span className="text-forest-600">TP</span>
+                    <span className="text-forest-600">Kanto</span>
+                    <span className="text-forest-600">Kesto</span>
+                    {selHenki.map(t => (
+                      <React.Fragment key={t.id}>
+                        <span className="text-parchment font-body text-sm">{t.nimi}</span>
+                        <span style={{ color: theme.accent }}>{t.taikapisteet === -1 ? 'muutt.' : t.taikapisteet}</span>
+                        <span className="text-forest-400">{t.kantomatka}</span>
+                        <span className="text-forest-400">{t.kestoaika}</span>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {selRiimu.length > 0 && (
+                <div>
+                  <p className="text-forest-500 text-xs font-mono uppercase tracking-widest mb-2">Riimutaikuus</p>
+                  <div className="grid grid-cols-[1fr_auto_auto_auto_auto] gap-x-6 gap-y-1 text-xs font-mono">
+                    <span className="text-forest-600">Loitsu</span>
+                    <span className="text-forest-600">LP</span>
+                    <span className="text-forest-600">Kanto</span>
+                    <span className="text-forest-600">Kesto</span>
+                    <span className="text-forest-600">Saatavuus</span>
+                    {selRiimu.map(t => (
+                      <React.Fragment key={t.id}>
+                        <span className="text-parchment font-body text-sm">{t.nimi}</span>
+                        <span style={{ color: theme.accent }}>{t.taikapisteet}</span>
+                        <span className="text-forest-400">{t.kantomatka}</span>
+                        <span className="text-forest-400">{t.kestoaika}</span>
+                        <span className="text-forest-400">{t.saatavuus}</span>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </Section>
+          )}
 
           {/* Background */}
           {c.tausta && (

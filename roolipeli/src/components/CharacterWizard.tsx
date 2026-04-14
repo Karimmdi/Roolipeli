@@ -1,6 +1,14 @@
 import React, { useMemo, useState } from 'react'
 import { X, ChevronLeft, ChevronRight, Check, Sparkles, ChevronDown, ChevronUp } from 'lucide-react'
 import { CharacterData } from './CharacterCard'
+import { KYVYT_LISTA, calculateCategoryBonus } from '../utils/kyvyt'
+import { laskeVahinkomuutos, laskeIskunopeus, laskeKestopisteet, laskeVasymyspisteet, laskeLiike, laskeKestopisteetKohdittain } from '../utils/johdetutArvot'
+import kultitData from '../data/kultit.json'
+import meleeData from '../data/meleeaseet.json'
+import heittoData from '../data/heittoaseet.json'
+import henkiData from '../data/henkitaikuus.json'
+import riimuData from '../data/riimutaikuus.json'
+import type { MeleeAse, HeittoAse, HenkiTaika, RiimuTaika } from '../data/types'
 
 function getDiceNotation(key: string): string {
   return key === 'KOK' || key === 'ALY' ? '2d6+6' : '3d6'
@@ -23,18 +31,17 @@ const STEPS = [
   { label: 'Perustiedot'  },
   { label: 'Ominaisuudet' },
   { label: 'Kyvyt'        },
+  { label: 'Varusteet'    },
   { label: 'Tausta'       },
 ]
 
-const KYKYLAJI_CONFIG: Record<string, { ensisijainen: string[]; toissijainen: string[]; negatiivinen: string[] }> = {
-  ketteryys: { ensisijainen: ['NPP'], toissijainen: ['VMA'], negatiivinen: ['KOK'] },
-  kommunikointi: { ensisijainen: ['ALY'], toissijainen: ['MHT', 'ULK'], negatiivinen: [] },
-  tieto: { ensisijainen: ['ALY'], toissijainen: [], negatiivinen: [] },
-  manipulointi: { ensisijainen: ['ALY', 'NPP'], toissijainen: ['VMA'], negatiivinen: [] },
-  havainto: { ensisijainen: ['ALY'], toissijainen: ['MHT', 'RR'], negatiivinen: [] },
-  salavihkaisuus: { ensisijainen: ['NPP'], toissijainen: [], negatiivinen: ['KOK', 'MHT'] },
-  taikuus: { ensisijainen: ['ALY', 'MHT'], toissijainen: ['NPP'], negatiivinen: [] },
-}
+const MELEE_ASEET  = meleeData  as MeleeAse[]
+const HEITTO_ASEET = heittoData as HeittoAse[]
+const HENKI_TAIKUUS = henkiData as HenkiTaika[]
+const RIIMU_TAIKUUS = riimuData as RiimuTaika[]
+const MELEE_ASELAJIT = [...new Set(MELEE_ASEET.map(a => a.aselaji))]
+const HENKI_TYYPIT   = [...new Set(HENKI_TAIKUUS.map(t => t.tyyppi))]
+
 
 const KULTTUURIT = [
   'Barbaarivyö', 'Caladramaa', 'Carmania', 'Dara Happa', 'Eol', 'Esrolia',
@@ -44,30 +51,16 @@ const KULTTUURIT = [
   'Tastolar', 'Teshnos', 'Trowjangin saari', 'Vadelin saaret', 'Yggin saaret',
 ]
 
-const KULTIT = [
-  'Ei kulttia', 'Orlanth', 'Kyger Litor', 'Humakt', 'Ernalda', 'Issaries',
-  'Lhankor Mhy', 'Chalana Arroy', 'Myrskyhärkä', 'Yelm', 'Yelmalio',
-  'Seitsemän Äitiä', 'Punainen Jumalatar', 'Etyries', 'Zorak Zoran',
-]
+const KULTIT = kultitData
 
 const ROOLIT = [
   'Uskonnoton', 'Maallikko', 'Noviisi', 'Akolyytti', 'Pappi',
   'Riimulordi', 'Ylipappi', 'Shamaani', 'Velho', 'Maagi',
 ]
 
-const KYVYT_LISTA = [
-  { nimi: 'Heitto', perus: 25, kategoria: 'ketteryys' }, { nimi: 'Hyppy', perus: 25, kategoria: 'ketteryys' }, { nimi: 'Kiipeily', perus: 40, kategoria: 'ketteryys' },
-  { nimi: 'Ratsastus', perus: 5, kategoria: 'ketteryys' }, { nimi: 'Uinti', perus: 15, kategoria: 'ketteryys' }, { nimi: 'Väistö', perus: 5, kategoria: 'ketteryys' },
-  { nimi: 'Puhetaito', perus: 5, kategoria: 'kommunikointi' }, { nimi: 'Suostuttelu', perus: 5, kategoria: 'kommunikointi' }, { nimi: 'Laulu', perus: 5, kategoria: 'kommunikointi' },
-  { nimi: 'Ensiapu', perus: 10, kategoria: 'tieto' }, { nimi: 'Eläintieto', perus: 5, kategoria: 'tieto' }, { nimi: 'Ihmistieto', perus: 5, kategoria: 'tieto' },
-  { nimi: 'Kasvitieto', perus: 5, kategoria: 'tieto' }, { nimi: 'Yleistieto', perus: 5, kategoria: 'tieto' },
-  { nimi: 'Aseeton taistelu', perus: 0, kategoria: 'manipulointi' }, { nimi: 'Kätke', perus: 5, kategoria: 'manipulointi' }, { nimi: 'Laadi', perus: 5, kategoria: 'manipulointi' }, { nimi: 'Silmänkääntö', perus: 5, kategoria: 'manipulointi' },
-  { nimi: 'Etsintä', perus: 25, kategoria: 'havainto' }, { nimi: 'Havaitse', perus: 25, kategoria: 'havainto' }, { nimi: 'Kuuntelu', perus: 25, kategoria: 'havainto' },
-  { nimi: 'Hiipiminen', perus: 10, kategoria: 'salavihkaisuus' }, { nimi: 'Piileskely', perus: 10, kategoria: 'salavihkaisuus' },
-]
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  const [open, setOpen] = useState(true)
+function Section({ title, children, defaultOpen = true }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen)
   return (
     <div className="border border-forest-700/50 rounded-lg overflow-hidden mb-4">
       <button type="button" onClick={() => setOpen(o => !o)}
@@ -86,7 +79,6 @@ interface Props {
   existingCharacter?: CharacterData | null
 }
 
-type SkillCategory = 'ketteryys' | 'kommunikointi' | 'tieto' | 'manipulointi' | 'havainto' | 'salavihkaisuus' | 'taikuus'
 
 interface WizardForm {
   nimi: string
@@ -110,6 +102,10 @@ interface WizardForm {
   NPP: number
   ULK: number
   kyvyt: Record<string, number>
+  valitutMeleeAseet: string[]
+  valitutHeittoAseet: string[]
+  valitutHenkitaikuudet: string[]
+  valitutRiimutaikuudet: string[]
 }
 
 export default function CharacterWizard({ onClose, onSave, existingCharacter }: Props) {
@@ -135,6 +131,10 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
     NPP: existingCharacter?.NPP || 10,
     ULK: existingCharacter?.ULK || 10,
     kyvyt: existingCharacter?.kyvyt || {},
+    valitutMeleeAseet:    existingCharacter?.valitutMeleeAseet    || [],
+    valitutHeittoAseet:   existingCharacter?.valitutHeittoAseet   || [],
+    valitutHenkitaikuudet: existingCharacter?.valitutHenkitaikuudet || [],
+    valitutRiimutaikuudet: existingCharacter?.valitutRiimutaikuudet || [],
   })
 
   const set = (key: string, val: any) => setForm(f => ({ ...f, [key]: val }))
@@ -143,48 +143,38 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
     setForm(f => ({ ...f, kyvyt: { ...f.kyvyt, [nimi]: arvo } }))
   }
 
+  const toggleId = (field: 'valitutMeleeAseet' | 'valitutHeittoAseet' | 'valitutHenkitaikuudet' | 'valitutRiimutaikuudet', id: string) => {
+    setForm(f => {
+      const arr = f[field]
+      return { ...f, [field]: arr.includes(id) ? arr.filter(x => x !== id) : [...arr, id] }
+    })
+  }
+
   const kykylajibonukset = useMemo(() => {
-    const laskeBonus = (kategoria: keyof typeof KYKYLAJI_CONFIG) => {
-      const saannot = KYKYLAJI_CONFIG[kategoria]
-      let bonus = 0
-
-      saannot.ensisijainen.forEach(om => {
-        const arvo = Number((form as any)[om])
-        if (!Number.isNaN(arvo)) bonus += arvo - 10
-      })
-
-      saannot.toissijainen.forEach(om => {
-        const arvo = Number((form as any)[om])
-        if (!Number.isNaN(arvo)) bonus += Math.floor((arvo - 10) / 2)
-      })
-
-      saannot.negatiivinen.forEach(om => {
-        const arvo = Number((form as any)[om])
-        if (!Number.isNaN(arvo)) bonus -= arvo - 10
-      })
-
-      return bonus
-    }
-
+    const attrs = { VMA: form.VMA, RR: form.RR, KOK: form.KOK, ALY: form.ALY, MHT: form.MHT, NPP: form.NPP, ULK: form.ULK }
     return {
-      ketteryys: laskeBonus('ketteryys'),
-      kommunikointi: laskeBonus('kommunikointi'),
-      tieto: laskeBonus('tieto'),
-      manipulointi: laskeBonus('manipulointi'),
-      havainto: laskeBonus('havainto'),
-      salavihkaisuus: laskeBonus('salavihkaisuus'),
-      taikuus: laskeBonus('taikuus'),
+      ketteryys:      calculateCategoryBonus(attrs, 'ketteryys'),
+      kommunikointi:  calculateCategoryBonus(attrs, 'kommunikointi'),
+      tieto:          calculateCategoryBonus(attrs, 'tieto'),
+      manipulointi:   calculateCategoryBonus(attrs, 'manipulointi'),
+      havainto:       calculateCategoryBonus(attrs, 'havainto'),
+      salavihkaisuus: calculateCategoryBonus(attrs, 'salavihkaisuus'),
+      taikuus:        calculateCategoryBonus(attrs, 'taikuus'),
     }
   }, [form.VMA, form.RR, form.KOK, form.ALY, form.MHT, form.NPP, form.ULK])
 
   const handleSave = () => {
+    const KP = laskeKestopisteet(form.KOK, form.VMA)
     onSave({
       id: existingCharacter?.id || Date.now().toString(),
       ...form,
-      KP: Math.ceil((form.KOK + form.VMA) / 2),
+      KP,
       TP: form.MHT,
-      IH: (form.NPP <= 9 ? 4 : form.NPP <= 15 ? 3 : form.NPP <= 19 ? 2 : 1)
-        + (form.KOK <= 9 ? 3 : form.KOK <= 15 ? 2 : form.KOK <= 19 ? 1 : 0),
+      IH: laskeIskunopeus(form.NPP, form.KOK),
+      vahinkomuutos: laskeVahinkomuutos(form.VMA, form.KOK),
+      liike: laskeLiike(),
+      vasymyspisteet: laskeVasymyspisteet(form.VMA, form.KOK),
+      kestopisteetKohdittain: laskeKestopisteetKohdittain(KP),
     })
   }
 
@@ -291,7 +281,8 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
                   <label className="block text-forest-400 text-sm mb-1 font-mono tracking-wider">Kultti</label>
                   <select value={form.kultti} onChange={e => set('kultti', e.target.value)}
                     className="w-full bg-forest-900/80 border border-forest-700 rounded-lg px-3 py-2 text-parchment font-body focus:border-rune focus:outline-none">
-                    {KULTIT.map(k => <option key={k} value={k}>{k}</option>)}
+                    <option value="Ei kulttia">Ei kulttia</option>
+                    {KULTIT.map(k => <option key={k.id} value={k.nimi}>{k.nimi}</option>)}
                   </select>
                 </div>
 
@@ -403,8 +394,103 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
             </Section>
           )}
 
-          {/* Step 4 — Background */}
+          {/* Step 4 — Equipment & Magic */}
           {step === 3 && (
+            <>
+              <Section title="Lähitaistelu" defaultOpen={false}>
+                {MELEE_ASELAJIT.map(aselaji => (
+                  <div key={aselaji} className="mb-3 last:mb-0">
+                    <p className="text-forest-500 text-xs font-mono uppercase tracking-widest mb-1 mt-2 first:mt-0">{aselaji}</p>
+                    {MELEE_ASEET.filter(a => a.aselaji === aselaji).map(ase => {
+                      const sel = form.valitutMeleeAseet.includes(ase.id)
+                      return (
+                        <div key={ase.id} className="flex items-center gap-2 py-1 border-b border-forest-700/20 last:border-0">
+                          <button type="button" onClick={() => toggleId('valitutMeleeAseet', ase.id)}
+                            className={`w-6 h-6 rounded border text-xs font-bold flex items-center justify-center flex-shrink-0 transition-all
+                              ${sel ? 'border-rune bg-rune/20 text-rune' : 'border-forest-600 text-forest-600 hover:border-forest-400 hover:text-forest-400'}`}>
+                            {sel ? '✓' : '+'}
+                          </button>
+                          <span className="text-forest-300 text-sm flex-1 font-body">{ase.nimi}</span>
+                          <span className="text-rune text-xs font-mono">{ase.vahinko}</span>
+                          {ase.VMA   != null && <span className="text-forest-600 text-xs font-mono">VMA≥{ase.VMA}</span>}
+                          {ase.NPP   != null && <span className="text-forest-600 text-xs font-mono">NPP≥{ase.NPP}</span>}
+                          <span className="text-forest-500 text-xs font-mono w-7 text-right">{ase.perusPrs}%</span>
+                        </div>
+                      )
+                    })}
+                  </div>
+                ))}
+              </Section>
+
+              <Section title="Heittoaseet" defaultOpen={false}>
+                {HEITTO_ASEET.map(ase => {
+                  const sel = form.valitutHeittoAseet.includes(ase.id)
+                  return (
+                    <div key={ase.id} className="flex items-center gap-2 py-1 border-b border-forest-700/20 last:border-0">
+                      <button type="button" onClick={() => toggleId('valitutHeittoAseet', ase.id)}
+                        className={`w-6 h-6 rounded border text-xs font-bold flex items-center justify-center flex-shrink-0 transition-all
+                          ${sel ? 'border-rune bg-rune/20 text-rune' : 'border-forest-600 text-forest-600 hover:border-forest-400 hover:text-forest-400'}`}>
+                        {sel ? '✓' : '+'}
+                      </button>
+                      <span className="text-forest-300 text-sm flex-1 font-body">{ase.nimi}</span>
+                      <span className="text-rune text-xs font-mono">{ase.vahinko}</span>
+                      <span className="text-forest-500 text-xs font-mono">{ase.normaaliKanto}m</span>
+                      {ase.VMA != null && <span className="text-forest-600 text-xs font-mono">VMA≥{ase.VMA}</span>}
+                      {ase.NPP != null && <span className="text-forest-600 text-xs font-mono">NPP≥{ase.NPP}</span>}
+                      <span className="text-forest-500 text-xs font-mono w-7 text-right">{ase.perusPrs}%</span>
+                    </div>
+                  )
+                })}
+              </Section>
+
+              <Section title="Henkitaikuus" defaultOpen={false}>
+                {HENKI_TYYPIT.map(tyyppi => (
+                  <div key={tyyppi} className="mb-3 last:mb-0">
+                    <p className="text-forest-500 text-xs font-mono uppercase tracking-widest mb-1 mt-2 first:mt-0">{tyyppi}</p>
+                    {HENKI_TAIKUUS.filter(t => t.tyyppi === tyyppi).map(taika => {
+                      const sel = form.valitutHenkitaikuudet.includes(taika.id)
+                      const tpStr = taika.taikapisteet === -1 ? 'muutt.' : `${taika.taikapisteet} TP`
+                      return (
+                        <div key={taika.id} className="flex items-center gap-2 py-1 border-b border-forest-700/20 last:border-0">
+                          <button type="button" onClick={() => toggleId('valitutHenkitaikuudet', taika.id)}
+                            className={`w-6 h-6 rounded border text-xs font-bold flex items-center justify-center flex-shrink-0 transition-all
+                              ${sel ? 'border-rune bg-rune/20 text-rune' : 'border-forest-600 text-forest-600 hover:border-forest-400 hover:text-forest-400'}`}>
+                            {sel ? '✓' : '+'}
+                          </button>
+                          <span className="text-forest-300 text-sm flex-1 font-body">{taika.nimi}</span>
+                          <span className="text-rune text-xs font-mono">{tpStr}</span>
+                          <span className="text-forest-500 text-xs font-mono hidden sm:block">{taika.kantomatka}</span>
+                          <span className="text-forest-600 text-xs font-mono hidden sm:block">{taika.kestoaika}</span>
+                        </div>
+                      )
+                    })}
+                  </div>
+                ))}
+              </Section>
+
+              <Section title="Riimutaikuus" defaultOpen={false}>
+                {RIIMU_TAIKUUS.map(taika => {
+                  const sel = form.valitutRiimutaikuudet.includes(taika.id)
+                  return (
+                    <div key={taika.id} className="flex items-center gap-2 py-1 border-b border-forest-700/20 last:border-0">
+                      <button type="button" onClick={() => toggleId('valitutRiimutaikuudet', taika.id)}
+                        className={`w-6 h-6 rounded border text-xs font-bold flex items-center justify-center flex-shrink-0 transition-all
+                          ${sel ? 'border-rune bg-rune/20 text-rune' : 'border-forest-600 text-forest-600 hover:border-forest-400 hover:text-forest-400'}`}>
+                        {sel ? '✓' : '+'}
+                      </button>
+                      <span className="text-forest-300 text-sm flex-1 font-body">{taika.nimi}</span>
+                      <span className="text-rune text-xs font-mono">{taika.taikapisteet} LP</span>
+                      <span className="text-forest-500 text-xs font-mono hidden sm:block">{taika.kantomatka}</span>
+                      <span className="text-forest-600 text-xs font-mono hidden sm:block truncate max-w-[100px]">{taika.saatavuus}</span>
+                    </div>
+                  )
+                })}
+              </Section>
+            </>
+          )}
+
+          {/* Step 5 — Background */}
+          {step === 4 && (
             <Section title="Tausta">
               <textarea value={form.tausta} onChange={e => set('tausta', e.target.value)}
                 rows={8}
