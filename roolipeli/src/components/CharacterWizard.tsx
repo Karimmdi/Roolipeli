@@ -144,8 +144,8 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
             <div className="flex justify-between mb-2">
               {STEPS.map((s, i) => (
                 <button key={i} type="button"
-                  onClick={() => i < step && setStep(i)}
-                  className={`flex flex-col items-center gap-1 ${i < step ? 'cursor-pointer' : 'cursor-default'}`}>
+                  onClick={() => setStep(i)}
+                  className="flex flex-col items-center gap-1 cursor-pointer">
                   <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center font-mono text-xs font-bold transition-all
                     ${i < step ? 'bg-rune border-rune text-darkwood' : i === step ? 'bg-forest-700 border-rune text-rune' : 'bg-forest-900 border-forest-700 text-forest-600'}`}>
                     {i < step ? <Check size={12} /> : i + 1}
@@ -330,6 +330,15 @@ export default function CharacterWizard({ onClose, onSave, existingCharacter }: 
               {isFirst ? 'Peruuta' : 'Edellinen'}
             </button>
             <div className="flex-1" />
+            {existingCharacter && !isLast && (
+              <button type="button" onClick={handleSave}
+                className="flex items-center gap-2 px-5 py-3 rounded-xl font-display text-sm
+                           tracking-widest transition-all border border-rune/40
+                           bg-forest-800/60 text-rune hover:bg-forest-700/60 shadow-rune">
+                <Check size={16} />
+                Tallenna muutokset
+              </button>
+            )}
             {!isLast ? (
               <button type="button" onClick={() => setStep(s => s + 1)}
                 className="flex items-center gap-2 px-6 py-3 rounded-xl font-display text-sm
