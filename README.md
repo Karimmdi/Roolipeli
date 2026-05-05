@@ -4,9 +4,9 @@
 # Change your directory to roolipeli
 # Then run this commands:
 
-cd roolipeli
-npm init
-npm install
-npm run dev
+# cd roolipeli
+# npm init
+# npm install
+# npm run dev
 
 # Then open localhost on your machine and Enjoy!
