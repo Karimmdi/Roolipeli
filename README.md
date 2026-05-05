@@ -1,27 +1,12 @@
-Git Branch Workflow Guide:
+# How to run the program:
+# You need to have node and npm installed on your machine
+# After you pulled or cloned  the repo on your local machine
+# Change your directory to roolipeli
+# Then run this commands:
 
-# Create Your Personal Branch
-git checkout -b your-branch-name
+cd roolipeli
+npm init
+npm install
+npm run dev
 
-# IT IS VERY IMPORTANT: to keep your branch updated.
-# Before adding anything to code do:
-
-# Step 1 —  (if not already in amin)
-git checkout main
-git pull
-
-# Step 2 — Switch back to your branch:
-git checkout your-branch-name
-
-# Step 3 — Merge main into your branch:
-git merge main
-
-# If there are no conflicts → great!
-# If there are conflicts → fix them now or ask friends (much easier than later).
-
-
-
-
-
-
-
+# Then open localhost on your machine and Enjoy!
