@@ -1,0 +1,1227 @@
+[
+  {
+    "id": "kultti_acos",
+    "nimi": "Acos",
+    "pantheon": "Itäinen, Yelm"
+  },
+  {
+    "id": "kultti_aika",
+    "nimi": "Aika",
+    "pantheon": "Universaali"
+  },
+  {
+    "id": "kultti_alapuolen_kuningas",
+    "nimi": "Alapuolen kuningas",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_alatulet",
+    "nimi": "Alatulet",
+    "pantheon": "Orlanth, Pamalt, Yelm"
+  },
+  {
+    "id": "kultti_aldrya",
+    "nimi": "Aldrya",
+    "pantheon": "Haltia"
+  },
+  {
+    "id": "kultti_aleshmara",
+    "nimi": "Aleshmara",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_alkukaaos",
+    "nimi": "Alkukaaos",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_annila",
+    "nimi": "Annila",
+    "pantheon": "Lunar, Merikansa, Pamalt, Peikko"
+  },
+  {
+    "id": "kultti_apotit",
+    "nimi": "Apotit",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_aptance_viisas",
+    "nimi": "Aptance Viisas",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_arachne_solara",
+    "nimi": "Arachne Solara",
+    "pantheon": "Universaali"
+  },
+  {
+    "id": "kultti_araganthosas",
+    "nimi": "Araganthosas",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_aranea",
+    "nimi": "Aranea",
+    "pantheon": "Pamalt, Peikko"
+  },
+  {
+    "id": "kultti_argan_argar",
+    "nimi": "Argan Argar",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_arkat",
+    "nimi": "Arkat",
+    "pantheon": "Malkioni, Orlanth, Peikko"
+  },
+  {
+    "id": "kultti_artmal",
+    "nimi": "Artmal",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_asrelia",
+    "nimi": "Asrelia",
+    "pantheon": "Orlanth, Peikko"
+  },
+  {
+    "id": "kultti_atyar",
+    "nimi": "Atyar",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_aurelion",
+    "nimi": "Aurelion",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_avokatisyys",
+    "nimi": "Avokätisyys",
+    "pantheon": "Kääpiö"
+  },
+  {
+    "id": "kultti_babeester_gor",
+    "nimi": "Babeester Gor",
+    "pantheon": "Haltia, Orlanth, Pamalt"
+  },
+  {
+    "id": "kultti_bagog",
+    "nimi": "Bagog",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_bolongo",
+    "nimi": "Bolongo",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_brastalos",
+    "nimi": "Brastalos",
+    "pantheon": "Merikansa, Orlanth"
+  },
+  {
+    "id": "kultti_cacodemon",
+    "nimi": "Cacodemon",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_caladra_ja_aurelion",
+    "nimi": "Caladra ja Aurelion",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_chalana_arroy",
+    "nimi": "Chalana Arroy",
+    "pantheon": "Orlanth, Yelm"
+  },
+  {
+    "id": "kultti_cronisper_viisas",
+    "nimi": "Cronisper Viisas",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_daga",
+    "nimi": "Daga",
+    "pantheon": "Orlanth, Yelm"
+  },
+  {
+    "id": "kultti_daka_fal",
+    "nimi": "Daka Fal",
+    "pantheon": "Orlanth, Praxilainen"
+  },
+  {
+    "id": "kultti_daliath",
+    "nimi": "Daliath",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_danfive_xaron",
+    "nimi": "Danfive Xaron",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_daruda",
+    "nimi": "Daruda",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_dayzatar",
+    "nimi": "Dayzatar",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_deezola",
+    "nimi": "Deezola",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_dehore",
+    "nimi": "Dehore",
+    "pantheon": "Pamalt, Peikko"
+  },
+  {
+    "id": "kultti_dendara",
+    "nimi": "Dendara",
+    "pantheon": "Itäinen, Yelm"
+  },
+  {
+    "id": "kultti_donadar",
+    "nimi": "Donadar",
+    "pantheon": "Orlanth, Yelm"
+  },
+  {
+    "id": "kultti_dormal",
+    "nimi": "Dormal",
+    "pantheon": "Malkioni, Merikansa, Orlanth"
+  },
+  {
+    "id": "kultti_drospoly",
+    "nimi": "Drospoly",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_ehilm",
+    "nimi": "Ehilm",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_eiritha",
+    "nimi": "Eiritha",
+    "pantheon": "Praxilainen, Yelm"
+  },
+  {
+    "id": "kultti_epapyha_kolmikko",
+    "nimi": "Epäpyhä Kolmikko",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_ernalda",
+    "nimi": "Ernalda",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_esi-isien_palvonta",
+    "nimi": "Esi-isien Palvonta",
+    "pantheon": "Hsunchen, Pamalt, Peikko, Praxilainen"
+  },
+  {
+    "id": "kultti_etyries",
+    "nimi": "Etyries",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_eurmal",
+    "nimi": "Eurmal",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_faranar",
+    "nimi": "Faranar",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_flatmal",
+    "nimi": "Flatmal",
+    "pantheon": "Haltia"
+  },
+  {
+    "id": "kultti_framanthe",
+    "nimi": "Framanthe",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_gagarth",
+    "nimi": "Gagarth",
+    "pantheon": "Orlanth, Praxilainen"
+  },
+  {
+    "id": "kultti_gark_rauhallinen",
+    "nimi": "Gark Rauhallinen",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_gata",
+    "nimi": "Gata",
+    "pantheon": "Haltia"
+  },
+  {
+    "id": "kultti_gbaji",
+    "nimi": "Gbaji",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_genert",
+    "nimi": "Genert",
+    "pantheon": "Praxilainen"
+  },
+  {
+    "id": "kultti_gerlant_tulimiekka",
+    "nimi": "Gerlant Tulimiekka",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_glorantha",
+    "nimi": "Glorantha",
+    "pantheon": "Kääpiö, Haltia, Yelm"
+  },
+  {
+    "id": "kultti_godunya",
+    "nimi": "Godunya",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_golod",
+    "nimi": "Golod",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_garakiki",
+    "nimi": "Garakiki",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_gorgorma",
+    "nimi": "Gorgorma",
+    "pantheon": "Itäinen, Yelm"
+  },
+  {
+    "id": "kultti_gustbran",
+    "nimi": "Gustbran",
+    "pantheon": "Orlanth, Pamalt, Yelm"
+  },
+  {
+    "id": "kultti_haltioiden_korkea_kuningas",
+    "nimi": "Haltioiden Korkea Kuningas",
+    "pantheon": "Haltia"
+  },
+  {
+    "id": "kultti_harana_ilor",
+    "nimi": "Harana Ilor",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_heler",
+    "nimi": "Heler",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_himile",
+    "nimi": "Himile",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_hobimarong",
+    "nimi": "Hobimarong",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_hon-eel_tanssija",
+    "nimi": "Hon-eel Tanssija",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_hrestol",
+    "nimi": "Hrestol",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_humakt",
+    "nimi": "Humakt",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_humct",
+    "nimi": "Humct",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_hwarin_dalthippa",
+    "nimi": "Hwarin Dalthippa",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_hyalor_hevosen_kesyttaja",
+    "nimi": "Hyalor Hevosen kesyttäjä",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_hykim_&_mikyh",
+    "nimi": "Hykim & Mikyh",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_ikadz",
+    "nimi": "Ikadz",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_individualismi",
+    "nimi": "Individualismi",
+    "pantheon": "Kääpiö"
+  },
+  {
+    "id": "kultti_inora",
+    "nimi": "Inora",
+    "pantheon": "Orlanth, Praxilainen, Peikko"
+  },
+  {
+    "id": "kultti_iphara",
+    "nimi": "Iphara",
+    "pantheon": "Merikansa, Orlanth"
+  },
+  {
+    "id": "kultti_irrippi_ontor",
+    "nimi": "Irrippi Ontor",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_isoisa_kuolevainen",
+    "nimi": "Isoisä Kuolevainen",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_isoaiti_maa",
+    "nimi": "Isoäiti Maa",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_issaries",
+    "nimi": "Issaries",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_itaisten_saarten_jumalat",
+    "nimi": "Itäisten Saarten jumalat",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_jakaleet_noita",
+    "nimi": "Jakaleet Noita",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_jeset_lauttamies",
+    "nimi": "Jeset Lauttamies",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_jmijie",
+    "nimi": "Jmijie",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_jokijumalat",
+    "nimi": "Jokijumalat",
+    "pantheon": "Itäinen, Lunar, Orlanth, Yelm, Universaali"
+  },
+  {
+    "id": "kultti_kaikenkantaja",
+    "nimi": "Kaikenkantaja",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_kajabor",
+    "nimi": "Kajabor",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_kampa_ja_palmikko",
+    "nimi": "Kampa ja Palmikko",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_kapinallisjumalat",
+    "nimi": "Kapinallisjumalat",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_kargan_tor",
+    "nimi": "kargan Tor",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_kaksipainen_lohikaarme_ja_ystavallinen_joutsen",
+    "nimi": "Kaksipäinen Lohikäärme ja Ystävällinen Joutsen",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_kasvattaja",
+    "nimi": "Kasvattaja",
+    "pantheon": "Kääpiö, Haltia"
+  },
+  {
+    "id": "kultti_kasviveljekset",
+    "nimi": "Kasviveljekset",
+    "pantheon": "Haltia, Pamalt"
+  },
+  {
+    "id": "kultti_kaupunkien_jumalat",
+    "nimi": "Kaupunkien Jumalat",
+    "pantheon": "Itäinen, Lunar, Orlanth, Yelm"
+  },
+  {
+    "id": "kultti_keisarinna_maa",
+    "nimi": "Keisarinna Maa",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_keraun",
+    "nimi": "Keraun",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_kilpikonna",
+    "nimi": "Kilpikonna",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_kolat",
+    "nimi": "Kolat",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_krarsht",
+    "nimi": "Krarsht",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_krjalk",
+    "nimi": "Krjalk",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_kultainen_jousi",
+    "nimi": "Kultainen Jousi",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_kuningas_undine",
+    "nimi": "Kuningas Undine",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_kuun_(lunarin)_jumalatar",
+    "nimi": "Kuun (Lunarin) Jumalatar",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_kyger_litor",
+    "nimi": "Kyger Litor",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_lamsabi",
+    "nimi": "Lamsabi",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_lanbril",
+    "nimi": "Lanbril",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_larnste",
+    "nimi": "Larnste",
+    "pantheon": "Itäinen, Yelm"
+  },
+  {
+    "id": "kultti_lhankor_mhy",
+    "nimi": "Lhankor Mhy",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_lodril",
+    "nimi": "Lodril",
+    "pantheon": "Pamalt, Yelm"
+  },
+  {
+    "id": "kultti_lokarnos",
+    "nimi": "Lokarnos",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_loon",
+    "nimi": "Loon",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_lorian",
+    "nimi": "Lorian",
+    "pantheon": "Merikansa, Yelm"
+  },
+  {
+    "id": "kultti_lumavoxoran",
+    "nimi": "Lumavoxoran",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_lux",
+    "nimi": "Lux",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_luoja",
+    "nimi": "Luoja",
+    "pantheon": "Lunar, Malkioni"
+  },
+  {
+    "id": "kultti_löytölapsi",
+    "nimi": "Löytölapsi",
+    "pantheon": "Praxilainen"
+  },
+  {
+    "id": "kultti_maanoita",
+    "nimi": "Maanoita",
+    "pantheon": "Haltia, Hsunchen"
+  },
+  {
+    "id": "kultti_maantekija",
+    "nimi": "Maantekijä",
+    "pantheon": "Hsunchen, Praxilainen"
+  },
+  {
+    "id": "kultti_magasta",
+    "nimi": "Magasta",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_mahome",
+    "nimi": "Mahome",
+    "pantheon": "Orlanth, Pamalt, Yelm"
+  },
+  {
+    "id": "kultti_malia",
+    "nimi": "Malia",
+    "pantheon": "Kaaos, Peikko"
+  },
+  {
+    "id": "kultti_malkion",
+    "nimi": "Malkion",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_manthi",
+    "nimi": "Manthi",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_maran_gor",
+    "nimi": "Maran Gor",
+    "pantheon": "Orlanth, Pamalt"
+  },
+  {
+    "id": "kultti_mastakos",
+    "nimi": "Mastakos",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_mee_vorala",
+    "nimi": "Mee Vorala",
+    "pantheon": "Haltia, Peikko"
+  },
+  {
+    "id": "kultti_meren_herra",
+    "nimi": "Meren Herra",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_merikotka",
+    "nimi": "Merikotka",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_metsyla",
+    "nimi": "Metsyla",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_metsastaja",
+    "nimi": "Metsästäjä",
+    "pantheon": "Hsunchen, Orlanth, Pamalt, Peikko, Praxilainen"
+  },
+  {
+    "id": "kultti_mikaday",
+    "nimi": "Mikaday",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_mikyh",
+    "nimi": "Mikyh",
+    "pantheon": "Itäinen, Hsunchen, Orlanth, Pamalt"
+  },
+  {
+    "id": "kultti_mirintha",
+    "nimi": "Mirintha",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_molanni",
+    "nimi": "Molanni",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_mostal",
+    "nimi": "Mostal",
+    "pantheon": "Kääpiö"
+  },
+  {
+    "id": "kultti_murthdrya",
+    "nimi": "Murthdrya",
+    "pantheon": "Haltia, Merikansa"
+  },
+  {
+    "id": "kultti_mustan_torahampaan_veljeskunta",
+    "nimi": "Mustan Torahampaan Veljeskunta",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_myrskyharka",
+    "nimi": "Myrskyhärkä",
+    "pantheon": "Orlanth, Praxilainen"
+  },
+  {
+    "id": "kultti_natea",
+    "nimi": "Natea",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_nelat",
+    "nimi": "Nelat",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_nelja_ensimmaista_seuralaista",
+    "nimi": "Neljä Ensimmäistä Seuralaista",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_noruma",
+    "nimi": "Noruma",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_nuoret_alkeisvoimat",
+    "nimi": "Nuoret alkeisvoimat",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_nuoret_jumalat",
+    "nimi": "Nuoret Jumalat",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_nyanka",
+    "nimi": "Nyanka",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_nysalor",
+    "nimi": "Nysalor",
+    "pantheon": "Lunar, Yelm"
+  },
+  {
+    "id": "kultti_nakymatön_jumala",
+    "nimi": "Näkymätön Jumala",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_oakfed",
+    "nimi": "Oakfed",
+    "pantheon": "Orlanth, Praxilainen, Yelm"
+  },
+  {
+    "id": "kultti_odayla",
+    "nimi": "Odayla",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_oktamonistit",
+    "nimi": "Oktamonistit",
+    "pantheon": "Kääpiö"
+  },
+  {
+    "id": "kultti_ompalam",
+    "nimi": "Ompalam",
+    "pantheon": "Kaaos, Pamalt"
+  },
+  {
+    "id": "kultti_orenoar",
+    "nimi": "Orenoar",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_orlanth",
+    "nimi": "Orlanth",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_ourania",
+    "nimi": "Ourania",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_paha_mies",
+    "nimi": "Paha Mies",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_pamalt",
+    "nimi": "Pamalt",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_paslac",
+    "nimi": "Paslac",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_phargon",
+    "nimi": "Phargon",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_piika",
+    "nimi": "Piika",
+    "pantheon": "Praxilainen"
+  },
+  {
+    "id": "kultti_pocharngo_mutaattori",
+    "nimi": "Pocharngo Mutaattori",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_polaris",
+    "nimi": "Polaris",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_punainen_jumalatar",
+    "nimi": "Punainen Jumalatar",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_ragnaglar",
+    "nimi": "Ragnaglar",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_rasout",
+    "nimi": "Rasout",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_ratslaff",
+    "nimi": "Ratslaff",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_riisi_aiti",
+    "nimi": "Riisi Äiti",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_saliligor",
+    "nimi": "Saliligor",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_sarvipaa_mies",
+    "nimi": "Sarvipää Mies",
+    "pantheon": "Haltia, Hsunchen, Orlanth, Pamalt, Peikko, Praxilainen"
+  },
+  {
+    "id": "kultti_saukko",
+    "nimi": "Saukko",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_seitseman_aitia",
+    "nimi": "Seitsemän Äitiä",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_selarn",
+    "nimi": "Selarn",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_seseine",
+    "nimi": "Seseine",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_shavaya",
+    "nimi": "Shavaya",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_sikkanos",
+    "nimi": "Sikkanos",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_sisaisen_mestariuden_polku",
+    "nimi": "Sisäisen Mestariuden Polku",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_slor",
+    "nimi": "Slor",
+    "pantheon": "Haltia"
+  },
+  {
+    "id": "kultti_styx",
+    "nimi": "Styx",
+    "pantheon": "Merikansa, Peikko"
+  },
+  {
+    "id": "kultti_subere",
+    "nimi": "Subere",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_synkhai",
+    "nimi": "Synkhai",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_taivaallinen_tuomioistuin",
+    "nimi": "Taivaallinen Tuomioistuin",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_talor",
+    "nimi": "Talor",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_teelo_norri",
+    "nimi": "Teelo Norri",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_tekija",
+    "nimi": "Tekijä",
+    "pantheon": "Kääpiö, Haltia"
+  },
+  {
+    "id": "kultti_telask",
+    "nimi": "Telask",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_thalurzni",
+    "nimi": "Thalurzni",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_thanatar",
+    "nimi": "Thanatar",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_thed",
+    "nimi": "Thed",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_tholaina",
+    "nimi": "Tholaina",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_tien",
+    "nimi": "Tien",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_triolina",
+    "nimi": "Triolina",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_tsankth",
+    "nimi": "Tsankth",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_ty_kora_tek",
+    "nimi": "Ty Kora Tek",
+    "pantheon": "Orlanth, Pamalt"
+  },
+  {
+    "id": "kultti_tylena",
+    "nimi": "Tylena",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_uleria",
+    "nimi": "Uleria",
+    "pantheon": "Orlanth, Pamalt, Yelm"
+  },
+  {
+    "id": "kultti_umath",
+    "nimi": "Umath",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_umbrol",
+    "nimi": "Umbrol",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_vadrus",
+    "nimi": "Vadrus",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_valind",
+    "nimi": "Valind",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_valkaro",
+    "nimi": "Valkaro",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_valon_herra",
+    "nimi": "Valon Herra",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_valontuojat",
+    "nimi": "Valontuojat",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_valzain",
+    "nimi": "Valzain",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_vangono",
+    "nimi": "Vangono",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_vanha_mies",
+    "nimi": "Vanha Mies",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_vanhat_jumalat",
+    "nimi": "Vanhat Jumalat",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_vanhemmat_jumalat",
+    "nimi": "Vanhemmat Jumalat",
+    "pantheon": "Kääpiö, Haltia, Yelm"
+  },
+  {
+    "id": "kultti_varasjumalat",
+    "nimi": "Varasjumalat",
+    "pantheon": "Itäinen, Lunar, Orlanth, Pamalt, Peikko, Yelm"
+  },
+  {
+    "id": "kultti_varculanga",
+    "nimi": "Varculanga",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_vegetarismi",
+    "nimi": "Vegetarismi",
+    "pantheon": "Kääpiö"
+  },
+  {
+    "id": "kultti_veijari",
+    "nimi": "Veijari",
+    "pantheon": "Hsunchen, Itäinen, Orlanth, Pamalt, Universaali"
+  },
+  {
+    "id": "kultti_viljan_jumalattaret",
+    "nimi": "Viljan Jumalattaret",
+    "pantheon": "Haltia, Itäinen, Orlanth, Pamalt, Yelm"
+  },
+  {
+    "id": "kultti_villimies",
+    "nimi": "Villimies",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_vivamort",
+    "nimi": "Vivamort",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_voria",
+    "nimi": "Voria",
+    "pantheon": "Haltia, Orlanth, Yelm"
+  },
+  {
+    "id": "kultti_vovisibor",
+    "nimi": "Vovisibor",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_vrimak",
+    "nimi": "Vrimak",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_vaarat_jumalat",
+    "nimi": "Väärät Jumalat",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_wachaza",
+    "nimi": "Wachaza",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_waertag",
+    "nimi": "Waertag",
+    "pantheon": "Malkioni, Merikansa"
+  },
+  {
+    "id": "kultti_waha",
+    "nimi": "Waha",
+    "pantheon": "Praxilainen"
+  },
+  {
+    "id": "kultti_wakboth",
+    "nimi": "Wakboth",
+    "pantheon": "Kaaos"
+  },
+  {
+    "id": "kultti_worlanth",
+    "nimi": "Worlanth",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_xemela",
+    "nimi": "Xemela",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_xentha",
+    "nimi": "Xentha",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_xiola_umbar",
+    "nimi": "Xiola Umbar",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_yamsur",
+    "nimi": "Yamsur",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_yanafal_tarnils",
+    "nimi": "Yanafal Tarnils",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_yanmoria",
+    "nimi": "Yanmoria",
+    "pantheon": "Pamalt"
+  },
+  {
+    "id": "kultti_yara_aranis",
+    "nimi": "Yara Aranis",
+    "pantheon": "Lunar"
+  },
+  {
+    "id": "kultti_yelm",
+    "nimi": "Yelm",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_yelmalio",
+    "nimi": "Yelmalio",
+    "pantheon": "Haltia, Yelm"
+  },
+  {
+    "id": "kultti_yelorna",
+    "nimi": "Yelorna",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_yinkin",
+    "nimi": "Yinkin",
+    "pantheon": "Orlanth"
+  },
+  {
+    "id": "kultti_ylapuolen_kuningas",
+    "nimi": "Yläpuolen Kuningas",
+    "pantheon": "Hsunchen"
+  },
+  {
+    "id": "kultti_zaktirra",
+    "nimi": "Zaktirra",
+    "pantheon": "Itäinen"
+  },
+  {
+    "id": "kultti_zaramaka",
+    "nimi": "Zaramaka",
+    "pantheon": "Merikansa"
+  },
+  {
+    "id": "kultti_zong",
+    "nimi": "Zong",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_zorak_zoran",
+    "nimi": "Zorak Zoran",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_zzabur",
+    "nimi": "Zzabur",
+    "pantheon": "Malkioni"
+  },
+  {
+    "id": "kultti_aiti_pimeys",
+    "nimi": "Äiti Pimeys",
+    "pantheon": "Yelm"
+  },
+  {
+    "id": "kultti_punainen_lepakko",
+    "nimi": "Punainen Lepakko",
+    "pantheon": "Kaaos, Lunar"
+  },
+  {
+    "id": "kultti_moorgarki",
+    "nimi": "Moorgarki",
+    "pantheon": "Peikko"
+  },
+  {
+    "id": "kultti_musta_aurinko",
+    "nimi": "Musta aurinko",
+    "pantheon": "Peikko"
+  }
+]

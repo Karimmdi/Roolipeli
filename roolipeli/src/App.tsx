@@ -192,14 +192,8 @@ export default function App() {
             <Logo size={72} />
             <div className="text-center">
               <p className="text-parchment font-display text-3xl tracking-wider mb-3">Ei hahmoja vielä</p>
-              <p className="text-forest-400 font-body italic text-xl">Luo ensimmäinen sankarisi painamalla nappia.</p>
+              <p className="text-forest-400 font-body italic text-xl">Luo ensimmäinen sankarisi yläpalkin napista.</p>
             </div>
-            <button type="button" onClick={() => setModal('create')}
-              className="flex items-center gap-2 px-6 py-3 rounded-xl font-display text-base
-                         tracking-widest border border-forest-500 bg-forest-800/60 text-parchment
-                         hover:bg-forest-700/60 transition-all mt-2">
-              <Plus size={18} /> Luo ensimmäinen hahmo
-            </button>
           </div>
         )}
 

@@ -1,0 +1,462 @@
+[
+  {
+    "id": "h_ajatuspuhe",
+    "nimi": "Ajatuspuhe",
+    "tyyppi": "Työkalu",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu mahdollistaa viestinnän ajatuksen voimalla eli telepatian. Heittäjä voi lähettää ajatuksiaan yhdelle kohteelle jokaista loitsuun käytettyä pistettä kohti. Lähetettävät ajatukset pitää kuiskata ja vastaanottaja kuulee ne sillä kielellä millä ne lähetetään. Tämän loitsun kautta ei voi siirtää tietoa loitsuista tai taikapisteitä. Viseti kulkee vain loitsijalta kohteisiin. Jos A heittää loitsun B:hen ja C:hen, B ja C eivät ole yhteydessä toisiinsa.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_esiintyminen",
+    "nimi": "Esiintyminen",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Kukin loitsupiste lisää 2 pistettä ULK:a kohteelle loitsun kestoajaksi. Kohteen varsinainen ulkonäkö pysyy ennallaan, mutta muut näkevät hänet eri tavalla. Hahmoa ei voi edes tunnistaa, jos ULK kasvaa vähintään puolella. Esim. Rapa-Ripaa (ULK 4) ei voi tuntea, jos hän saa kaksi pistettä lisää, mutta Marilyn (ULK 15) tunnetaan vaikka hän saisi kuusikin pistettä lisää.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_fanaattisuus",
+    "nimi": "Fanaattisuus",
+    "tyyppi": "Tehostus",
+    "taikapisteet": 1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Kun tämä loitsu heitetään hahmoon, jolla on normaali ÄLY, hänen mahdollisuutensa osua kasvaa puolella. Siten 33%:n osumamahdollisuus nousee Fanaattisuuden vuoksi 50%:iin. Fanaattinen hahmo ei saa torjua eikä käyttää muita kuin hyökkäysloitsuja. Hahmon väistökyky puolitetaan. Onnistunut Masennusloitsu poistaa fanaattisuuden ja jättää kohteen normaaliin tilaan. Jos hahmo ei halua tätä loitsua, hän voi vastustaa sitä vastustustaulukon mukaisesti.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_haava",
+    "nimi": "Haava",
+    "tyyppi": "Hyökkäys",
+    "taikapisteet": 1,
+    "kantomatka": "Matka",
+    "kestoaika": "Välitön",
+    "kuvaus": "Tämä loitsu vahingoittaa kohteen ruumista. Jos loitsu läpäisee kohteen taikapisteet, tämä kärsii d3 pistettä vahinkoa satunnaiseen osumapaikkaan. Panssari tai vastaavat muut suojat eivät auta.",
+    "aktiivisuus": ""
+  },
+  {
+    "id": "h_hallitse",
+    "nimi": "Hallitse (lajia, usein henkiä)",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämän loitsun heitolla heittäjä alistaa jonkin tiettyä lajia edustavan olennon valtaansa. Loitsun tavallisin muoto on Hallitse henkiä. Jokaista muuta lajia  varten tarvitaan oma Hallitse-loitsu.\nHahmo voi hallita henkeä vasta, kun on pudottanut sen taikapisteet nollaan henkitaistelussa. Seuraavalla meleevuorolla hänen pitää heittää Hallitse-loitsu. Jos loitsu onnistuu, hengen on toteltava loitsun heittäjää. Mahdolliset käskyt on annettava ja kohteen on täytettävä ne ennen loitsun loppumista.\nHallittu olento on telepaattisessa yhteydessä loitsijaan. Yhteys katkeaa, josk olento ei ole hahmon näköpiirissä. Käskyt voi antaa telepaattisesti eikä niihin tarvita yhteistä kieltä, mutta niihin kuluu aikaa täysi meleevuoro. Olento voi toimia vasta sen jälkeen.",
+    "aktiivisuus": "Aktiivinen"
+  },
+  {
+    "id": "h_havaitseaine",
+    "nimi": "Havaitse (aine)",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Jokin merkkiesine, kuten kompassi, tikku tms., ohjaa heittäjän kohti lähintä halutun aineen esiintymispaikkaa. Loitsu läpäisee korkeintaan metrin kiveä, maata tai metallia.",
+    "aktiivisuus": "Aktiivinen"
+  },
+  {
+    "id": "h_havaitsetaikuus",
+    "nimi": "Havaitse taikuus",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu toimii periaatteessa samalla tavalla kuin Havaitse aine. Merkkiesine ohjaa heittäjän kohti lähintä taikaesinettä tai esinettä, jossa on loitsu. Se ei ohjaa kohti esinettä, joka jo koskettaa heittäjää. Se ei ohjaa kohti henkiä. Loitsu läpäisee korkeintaan metrin kiveä, maata tai metallia.",
+    "aktiivisuus": "Aktiivinen"
+  },
+  {
+    "id": "h_havaitsevihollinen",
+    "nimi": "Havaitse vihollinen",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu toimii periaatteessa kuin Havaitse aine. Merkkiesine ohjaa heittäjän kohti mahdollisia vihollisia. Aluksi suunta on kohti lähintä 100 metrin säteellä olevaa hahmoa, joka aikoo vahingoittaa loitsun heittäjää. Tämän löytymisen jälkeen loitsu ohjaa kohti seuraavaksi lähintä jne. kunnes sen vaikutus lakkaa. Loitsu läpäisee korkeintaan metrin kiveä, maata tai metallia.",
+    "aktiivisuus": "Aktiivinen"
+  },
+  {
+    "id": "h_henkinako",
+    "nimi": "Henkinäkö",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 3,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämän loitsun avulla voi katsoa elävän olennon MHT:n ja arvioida suunnilleen sen voiman. Shamaaneilla on tämä kyky luonnostaan eikä heidän tarvitse uhrata taikapisteitä sitä varten. Loitsija näkee kaikkien kantomatkan sisällä olevien olentojen MHT:n. Epäkuolleiden MHT ei näy, koska niillä ei ole omaa MHT:a. Taikaesineiden MHT näkyy, mutta loitsujen taikapisteet eivät.\nPelinjohtajan pitää kertoa, onko nähtyjen olentojen MHT on vähintään viisi pistettä pienempi tai suurempi kuin loitsijan. Hahmo voi tämän loitsun avulla suunnata lyöntejä pimeässä, jos vastustajilla on MHT. Hän ei saa loitsusta apua torjuntoihin.\nMikä tahansa paksunpuoleinen läpinäkymätön semä estää loitsun toiminnan.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_hitaus",
+    "nimi": "Hitaus",
+    "tyyppi": "Heikennys",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu hidastaa vihollisen liikettä yhden metrin iskuhetkessä käytettyä taikapistettä kohti. Se voi hidastaa olennon nopeuden nollaan. Jos olento yrittää liikkua, se menettää väsymyspisteitä aivan kuin liikkuisi normaalisti.\nOlento voi päästä liikkeelle, jos se yrittää juosta, mutta riittävän voimakas Hitaus-loitsu voi estää senkin.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_hohto",
+    "nimi": "Hohto",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu saa kohteen ääriviivat hohtamaan epämääräisesti niin, että kohteeseen on tavallista vaikeampi osua. Jokainen loitsunpiste vähentää vihollisten osumamahdollisuutta 5 %:lla.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_hamaannys",
+    "nimi": "Hämäännys",
+    "tyyppi": "Heikennys",
+    "taikapisteet": 2,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu sekaannuttaa vastustajan, jonka taikapisteet se läpäisee. Se ei muuta hänen käsityksiään, mutta sekoittaa ne. Hän ei tiedä, kuka on hänen ystävänsä ja tai vihollisensa. Jos joku hyökkää häntä vastaan, hän luonnollisesti tulkitsee tämän vihollisuudeksi. Aikomuksen ilmoitusvaiheessa uhrin pelaajan on ilmoitettava, että uhri yrittää karistaa hämäännyksen mielestään. Hahmo ei voi tehdä muuta sillä meleevuorolla. Pelaajan on heitettävä yli ÄLY X 5 D100:lla. Jos heitto onnistuu, loitsu katoaa. Jos heitto on kompurointi, uhri luulee ystäviään vihollisiksi ja päinvastoin. Koska tässä tilanteessa yritetään heittää korkeaa lukua, normaali kriittinen heitto (01, 02) vastaa kompurointia.\nLoitsun vaikuttaessa uhri ei voi hyökätä eikä väistää. Torjunta on sallittu, mutta loitsiminen ei.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_kaukonako",
+    "nimi": "Kaukonäkö",
+    "tyyppi": "Työkalu",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Jokainen tähän loitsuun käytetty taikapiste puolittaa hahmon ja hänen katseensa kohteen välimatkan. Näin kahden pisteen loitsu tuntuu pudottavan välimalkan neljäsosaan. Loitsija voi määritellä kohteensa tarkkaan, jolloin ainoastaan kyseinen kohde näkyy lähempää ja hahmon etsintäheitto paranee 5 %:lla käytettyä pistettä kohti.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_kestavyys",
+    "nimi": "Kestävyys",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Välitön",
+    "kuvaus": "Tämä loitsu poistaa väsymystä. Jokainen taikapiste lisää kohteen väsymyspisleitä viidellä, kuitenkin vain kohteen maksimipisleisiin asti. Loitsu ei vaikuta olentoihin, joilla ei ole väsymystä.",
+    "aktiivisuus": ""
+  },
+  {
+    "id": "h_koordinointi",
+    "nimi": "Koordinointi",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu lisää kohteen NPP:tä. Kohteella täytyy olla NPP-ominaisuus. Kukin käytetty piste lisää NPP:tä pisteen. Tämä parantaa NPP:een perustuvia kykyjä, NPP-heittoja ja nopeuttaa NPPiskuhetkeä, Tällä loitsulla voi korkeintaan kaksinkertaistaa kohteen NPP:en.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_korjaus",
+    "nimi": "Korjaus",
+    "tyyppi": "Työkalu",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Välitön",
+    "kuvaus": "Tämä loitsu korjaa rikkoutuneita esineitä. Loitsulla voi korjata vaikka miekan\ntai kilven. Jokainen loitsun piste korjaa d10 pistettä vahinkoa. Korjattuun esineeseen jää jälki, ja se on yhtä kestopistettä heikompi kuin ennen. Jos kysymyksessä on taikaesine, loitsu ei palauta murrettuja loitsuja tai vapautuneita henkiä.",
+    "aktiivisuus": ""
+  },
+  {
+    "id": "h_liikkuvuus",
+    "nimi": "Liikkuvuus",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Kukin piste tätä loitsua lisää kohteen liikkumisnopeuteen yhden metrin meleevuoroa kohti. Hahmo, johon tämä loitsu heitetään, menettää yhden väsymyspisteen alkavaa kolmea loitsupistettä kohti.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_liima",
+    "nimi": "Liima",
+    "tyyppi": "Työkalu",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Heittäjä saa joikaista tämä loitsun pistettä kohti käyttöönsä 10 x 10 cm:n liiman, jonka voi levittää missä muodossa tahansa. Liimauksen VMA on 10 pistettä jokaista käytettyä loitsupistettä kohti. Liima ei tartu elävään olentoon tai kasviin.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_masennus",
+    "nimi": "Masennus",
+    "tyyppi": "Heikennys",
+    "taikapisteet": 2,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämän loitsun uhri menettää kaiken itseluottamuksensa ja uskon oman puolen voittomahdollisuuksiin. Hän voi puolustautua täydellä kyvyllään, mutta hänen osumatodennäköisyytensä laskee puoleen. Hän voi heittää vain puolustavia loitsuja tai parannusloitsuja. Jos loitsu alkaa vaikuttaa ennen taistelua, kohde yrittää pysyä erossa taistelusta. Jos tilanne näyttää pahalta, hän luultavasti pakenee tai antautuu. Fanaattisuus-loitsu kumoaa Masennuksen ja päinvastoin. \nJos hahmo tajuaa olevansa Masennettu (korkeintaan 1x ÄLY d100:lla), hän voi yrittää heittää Fanaattisuuden tai Vastaloitsun torjuakseen Masennuksen. Hän ei voi toimia loitsua vastaan millään muulla tavalla. Loitsun huomaamisesta voi heittää vain kerran.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_moninuoli",
+    "nimi": "Moninuoli",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Jokamen piste tätä loitsua, joka heitetään nuoleen tai mihin tahansa heittoaseeseen tai ampuma-aseen ammukseen, luo kohdeammuksen kaltaisen taika-ammuksen. Tämä taika-ammus sinkoutuu matkaan yhdessä tavallisen ammuksen kanssa. Taika-ammuksella on sama vahinkoheitto kuin alkuperäisellä ammuksella. Ensin heitetään alkuperäiselle ammukselle, ja se on amoa ammus, joka voi lävistää. Jokaisen ammuksen osuma ja vahinko heitetään erikseen. Myös taikaammukset voivat osua kriittisesti. Tätä loitsua ei voi käyttää yhdessä Salamanuolen tai Tulinuolen kanssa.\nSuuret ampuma-aseet vaativat enemmän kuin yhden pisteen kutakin lisäammusta kohden. Kukin 2d6:n vahinkoa aseella edellyttää yhtä loitsupistettä.\nKoska loitsu on väliaikainen, sillä lumottu nuoli tms. on ammuttava ennen kuin loitsun vaikutus lakkaa.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_nakyvyys",
+    "nimi": "Näkyvyys",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 2,
+    "kantomatka": "itse",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu siirtää olennon henkiulottuvuudesta tavalliseen maailmaan. Olento on läpinäkyvä ja sen muoto vastaa muotoa, joka sillä oli elävänä. Se voi heittää loitsuja, siihen voi heittää loitsuja ja se voi koskettaa esineitä tms. Sitä ei kuitenkaan voi vahingoittaa aseilla, vaikka niissä olisi loitsuja. Tätä loitsua ei voi poistaa tavallisilla vastaloitsuilla, neutraloinneilla tai vastaavilla. Näkyvän olennon karkoittaminen takaisin henkiulottuvuuteen onnistuu vain, jos vastaloitsu tai muu poisto on yhtä vahva kuin karkoitettavan olennon taikapisteet.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_parannus",
+    "nimi": "Parannus",
+    "tyyppi": "Parannus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Välitön",
+    "kuvaus": "Tämä loitsu parantaa kestopisteiden kärsimää vahinkoa. Se parantaa yhden pisteen/loitsupiste, jos heittäjä ja kohde ovat samaa lajia. Heittäjän täytyy koskettaa sitä ruumiinosaa, jota haluaa parantaa. Vaikutus on välitön. Jos kohde ja heittäjä kuuluvat eri lajiin, loitsu parantaa yhden kestopisteen kahta käytettyä loitsupistettä kohti.",
+    "aktiivisuus": ""
+  },
+  {
+    "id": "h_rautakoura",
+    "nimi": "Rautakoura",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Välitön",
+    "kuvaus": "Tämä loitsu lisää kaikkien luonnollisten aseiden aiheuttamaa vahinkoa. Kukin loitsupiste lisää vahinkoa yhden pisteen verran ja antaa 5% lisää osumamahdollisuuteen. Loitsu toimii nyrkkien lisäksi kavioihin, hampaisiin jne.",
+    "aktiivisuus": ""
+  },
+  {
+    "id": "h_salamanuoli",
+    "nimi": "Salamanuoli",
+    "tyyppi": "Tehostus",
+    "taikapisteet": 1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Välitön",
+    "kuvaus": "Tämä loitsu lisää nuolen tai muun heittoaseen osumamahdollisuuteen 15% ja antaa 3 pistettä lisää vahinkoon. Loitsu on heitettävä sillä meleevuorolla, jolla ase lähtee.",
+    "aktiivisuus": ""
+  },
+  {
+    "id": "h_sammutus",
+    "nimi": "Sammutus",
+    "tyyppi": "Työkalu",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Välitön",
+    "kuvaus": "Tämä loitsu sammuttaa tulia ja jäähdyttää kuumia esineitä. Yksi piste sammuttaa lyhdyn tai soihdun, kaksi pistettä leiritulen, kolme pistettä suuren nuotion jne.",
+    "aktiivisuus": ""
+  },
+  {
+    "id": "h_sitkeys",
+    "nimi": "Sitkeys",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Jokainen tähän loitsuun käytetty taikapiste antaa 2 pistettä R-R:tta lisää kohteelle. Kohteella täytyy olla R-R-ominaisuus, jotta loitsu toimisi. Lisätyt R-R pisteet lisäävät kohteen kestoa ja osumapaikkakohtaiset pisteetkin luultavasti muuttuvat. R-R voi näin kasvaa korkeintaan kaksinkertaiseksi.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_suoja",
+    "nimi": "Suoja",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu lisää koko ruumiin panssarisuojaa yhdellä pisteellä käytettyä loitsupistettä kohti. Se toimii normaalin panssarin tavoin.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_sytytys",
+    "nimi": "Sytytys",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tällä loitsulla voi sytyttää mitä tahansa palavaa. Sillä voi sytyttää soihdun, talon tai jopa kuivan selkärepun. Ihoa ei voi sytyttää. Hiukset tai turkin voi sytyttää, mutta loitsijan pitää ensin voittaa uhrin taikapisteet vastustustaulukossa.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_tehonuija",
+    "nimi": "Tehonuija",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu toimii nuijatyyppisiin aseisiin. Jokainen käytetty piste lisää tällaisen aseen osumamahdollisuutta 5%:lla ja antaa vahinkoa lisää yhden pisteen verran. Tätä loitsua ei voi käyttää yhdessä minkään muun asetta parantavan loitsun kanssa. On huomattava, että nämä lisäpisteet voivat joissakin tapauksissa vahingoittaa myös olentoja, joihin aseen normaali vahinko ei vaikuta, kuten ihmissusia.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_teravyys",
+    "nimi": "Terävyys",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Jokainen piste tätä loitsua parantaa teräaseen osumaa 5%:lla ja antaa lisää vahinkoa 1 pisteen verran. Loitsua ei voi käyttää yhdessä minkään muun asetta parantavan loitsun kanssa, ja jos aseeseen heitetään kaksi terävyyttä, vain vahvempi niistä toimii. Jos samaan aseeseen heitetään Tylsyys, se heikentää aseen tekemää lisävahinkoa.\nOn huomattava, että terävyyspisteet voivat vaikuttaa olentoihin, joihin aseen normaali vahinko ei tehoa. ",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_tulimiekka",
+    "nimi": "Tulimiekka",
+    "tyyppi": "Tehostus",
+    "taikapisteet": 4,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Kun tämä loitsu heitetään johonkin teräaseeseen, aseen terä leimahtaa palamaan ja sen perusvahinko nousee 3d6:een. Aseen käyttäjän voimabonus lisätään tähän vahinkoon. Mikään tuli ei vahingoita tällaista asetta. Tätä loitsua ei voi käyttää Terävyyden kanssa.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_tulinuoli",
+    "nimi": "Tulinuoli",
+    "tyyppi": "Tehostus",
+    "taikapisteet": 2,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu luo palavan heittoaseen, jonka vahinko on 3d6. Tämä ase ei lävistä. Loitsu pitää heittää tavalliseen nuoleen, kiveen tms., joka syttyy lähtiessään heittäjän tai ampujan kädestä. Se voi sytyttää tulenaran esineen palamaan. Panssari suojaa sen aiheuttamalta vahingolta. Loitsua ei voi käyttää yhdessä Moninuolen tai Salamanuolen kanssa.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_tylsyys",
+    "nimi": "Tylsyys",
+    "tyyppi": "Heikennys",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu vähentää kaikkien meleeaseiden aiheuttamaa vahinkoa pisteellä loitsun käytettyä pistettä kohti. Nimestään huolimatta se vaikuttaa myös nuijiin ja muihin tylppiin aseisiin. Jos samaan aseeseen heitetään kaksi tylsyyttä, vain vahvempi niistä jää voimaan. Tämä loitsu ei tehoa luonnollisiin aseisiin.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_valo",
+    "nimi": "Valo",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu pitää heittää johonkin esineeseen. Sauva, sornrenpää tai semä käyvät hyvin. Loitsu valaisee kaiken 10 metrin säteellä niin hyvin, että valossa voi lukea. Valo ei kuitenkaan ole yhtä kirkasta kuin päivänvalo. Sammutus ei vaikuta tähän loitsuun.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_valovalli",
+    "nimi": "Valovalli",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 4,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu luo Valovallin, jonka pintaala on 10 neliömetriä ja paksuus 10 senttimetriä. Valli loistaa kirkkaasti toiselle puolelleen eikä näy läpi tältä puolelta. Toisella puolen se on himmeä ja sen läpi näkee. Lisäksi vallin loiste valaisee kaiken 10 säteellä. Loitsija voi liikuttaa vallia 1 metrin iskuhetkeä kohti ja sen voi lumota mihin muotoon tahansa, kunhan sen ala on 10 neliömetriä ja se on 10 senttiä paksu ja jatkuva.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_vastaloitsu",
+    "nimi": "Vastaloitsu",
+    "tyyppi": "Vastataikuus",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Välitön",
+    "kuvaus": "Tämä loitsu poistaa taikuutta. Yksi piste tätä loitsua poistaa yhden pisteen henkitaikuus- tai velholoitsua, kaksi pistettä poistaa pisteen riimuloitsua. Loitsua ei voi poistaa osittain, vaan se on saatava pois kokonaan. Jos tämä loitsu heitetään määrittelemättä tarkkaa kohdetta, se poistaa ensimmäisenä ensimmäisenä puolustavia loitsuja alkaen vahvimmasta loitsusta, johon se voi vaikuttaa.",
+    "aktiivisuus": ""
+  },
+  {
+    "id": "h_vastataikuus",
+    "nimi": "Vastataikuus",
+    "tyyppi": "Vastataikuus",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä puolustusloitsu suojaa kaikilta toisten heittämiltä loitsuilta, havaintosuojat ja jopa parannusloitsut mukaan lukien. Vastataikuuden voi myös heittää aseeseen jos haluaa suojata sitä, mutta vain jos aseessa ei ole ennestään loitsua. Vastataikuus ei suojaa henkiä vastaan.\nJos vastustavassa loitsussa on pisteitä ainakin kaksi vähemmän kuin Vastataikuudessa, se haihtuu olemattomiin ja Vastataikuus jää voimaan. Jos loitsun pisteet ovat yhden sisällä vastataikuudesta, molemmat loitsut häviävät. Jos loitsulla on ainakin kaksi pistettä enemmän kuin Vastataikuudella, Vastataikuus häviää ja hyökkäävä loitsu pääsee läpi (minkä jälkeen sen pitää vielä voittaa uhrin taikapisteet vastustustaulukossa).",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_voimakkuus",
+    "nimi": "Voimakkuus",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Jokainen tähän loitsuun käytetty piste antaa 3 pistettä VMA:a kohteelleen. Kohteella täytyy olla VMA-ominaisuus, jotta loitsu toimisi. Loitsu vaikuttaa kykylajibonuksiin, vahinkobonukseen ja ENC-pisteisiin. Kohteen VMA voi nousta korkeintaan kaksinkertaiseksi.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_yovalli",
+    "nimi": "Yövalli",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 2,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Tämä loitsu luo pimeän seinän, jonka ala on 10 metriä ja paksuus 10 senttiä. Loitsun heittäjä voi liikuttaa seinää 1 metrin iskuhetkessä. Valonlähteet eivät valaise seinän läpi eikä sen läpi voi nähdä. Seinän voi loihtia mihin tahansa muotoon kunhan sen paksuus on 10 cm, sen ala 10 neliömetriä ja se on jatkuva.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_henkikilpi",
+    "nimi": "Henkikilpi",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Matka",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Loitsu toimii henkisenä panssarina suojaten kohdettaan henkien hyökkäyksiltä. Se vahvistaa asianmukaista ominaisuutta 2 pistettä (tavallisesti MHT) kutakin loitsupistettä kohti henkitaistelussa. Ominaisuuden normaaliarvoa käytetään kaikkeen muuhun kuin henkitaisteluun.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "h_hiljaisuus",
+    "nimi": "Hiljaisuus",
+    "tyyppi": "Tehostus",
+    "taikapisteet": -1,
+    "kantomatka": "Kosketus",
+    "kestoaika": "Väliaikainen",
+    "kuvaus": "Kukin piste tätä loitsua lisää 15% hiipimiskykyyn sille hahmolle, johon loitsu kohdistuu. Se hävittää kaikki satunnaiset pienet äänet. Se ei estä kohdetta heittämästä loitsua, huutamasta eikä satunnaisia kovia ääniä (lasimaljakon putoaminen kivilattialle jne.).",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "hr_kutsulajia",
+    "nimi": "Kutsu (lajia)",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 1,
+    "kantomatka": "Rituaali (kutsu)",
+    "kestoaika": "Rituaali (kutsu)",
+    "kuvaus": "Henkiloitsulla kutsutaan yleensä vain henkiä. Tarkempi kuvaus kutsumisesta (riimumestarin kirjasta):\nKUTSUMINEN\nKutsurituaalia käytetään samalla kuin Kutsu (laji) rituaaliloitsuja joilla kutsutaan muiden ulottuvuuksien olentoja heittäjän luo. Ne eivät yleensä oleskele tässä maailmassa, joten velhon on käytettävä tätä loitsua saadakseen ne tulemaan luokseen.\nVaikka eri taikuuslajien käyttäjät saavat Kutsu (laji) loitsunsa eri tavoin, se toimii samalla tavoin kaikille.\nKutsurituaalin edellytykset\nRituaaliin tarvitaan häiriötön ympäristö ja suitsutuksen savua, ja lisäksi kutsujan on koko ajan pidettävä mielessään sen olennon kuva, jota kutsutaan. Tavallisesti hän käyttää olennon kuvaa tai pitää yllään tai katsoo olennon jotain ruumiinosaa. Esim. loimuava hiilipannu sopisi salamanterin kutsumiseen ja suden turkki susidemonille.\nOlentojen kutsuminen\nOn mahdollista kutsua vain olento, joka ei asu tässä ulottuvuudessa. Haamut, kaikki henget, aaveet, demonit alkeisvoimat ja muut on kutsuttava ennen kuin hallintaloitsua voidaan yrittää. Kun hahmo yrittää kutsua jotain olentoa, käytetään seuraavaa toimintatapaa:\nPelaaja ilmoittaa pelinjohtajalle mitä kutsuloitsua hän yrittää ja mikä hahmonsa kyky on Kutsumisrituaalissa. Jos hahmo kutsuu alkeisvoimaa, pelaajan on ilmoitettava myös minkäkokoisesta alkeisvoimasta on kysymys. Lisäksi hahmolla on oltava riittävästi ko. alkeisvoiman ominaista ainetta. Jos ainetta ei ole riittäVästi, kutsu epäonnistuu automaattisesti.\nPelaaja yrittää d100 heitolla heittää alle kutsukykynsä. Jos heitto onnistuu, pelinjohtaja kehittää kutsutun olennon.\nPelaaja ilmoittaa, kuinka monta taikapistettä hahmo käyttää. Jos taikapisteiden määrä on vähemmän kuin kutsutulla olennolla, rituaali epäonnistuu automaattisesti.\nKutsumiseen käytetyt taikapisteet kuluvat joka tapauksessa riippumatta siitä, onnistuiko Kutsu. Kutsuja ei voi käyttää enempää taikapisteitä kuin on saatavissa. Rituaali kestää yhden tunnin kutakin käytettyä taikapistettä kohden.\nKutsumisen tulos\nONNISTUMINEN: Tyypillinen satunnainen lajinsa edustaja ilmestyy siihen paikkaan, jossa Kutsuminen suoritettiin yhden meleevuoron Kutsumisen jälkeen. Olento ei ensin pysty tekemään yhtään mitään. Pelinjohtaja yrittää heittää alle olennon taikapisteiden d100:lla kerran meleevuorossa iskuhetkellä 1. Kun heitto onnistuu, olento voi toimia. Se on aina vihamielinen kutsujalleen ja kaikille näköpiirissä olijoille. Jos se on vahvempi kuin kutsujansa, se hyökkää tämän kimppuun, ja jos se on heikompi tai yhtä vahva, se pakenee omaan ulottuvuuteensa tai muualle tässä maailmassa.\nKriittisestä onnistumisesta kutsuheitossa ei ole apua millään tavalla.\nNoin 10% mahdollisuudella kutsuja manaa esiin valtavan ja/tai voimakkaamman version kutsutusta olennosta kuin oli tarkoitus. Kuten tässä maailmassa on voimakkaampia lordeja, myös henkiulottuvuudessa on vastaavia. Sellainen olento voi tulla, kun kutsuja yrittää avata tietä yhdelle niiden alamaisista. Tällaisilla hengillä voi olla mahti 35, 50 tai jopa 100. Myös voi tulla suunnattomia alkeisvoimia ja joitakin erittäin ilkeitä haamuja ja demoneja.\nEPÄONNISTUMINEN: Mitään olentoa ei tule. Käytetyt taikapisteet menetetään joka tapauksessa. Jos epäonnistuminen oli kompurointi, pelinjohtaja heittää Kutsun kohtaustaulukosta mitä todella ilmestyy. Ilmestyvä olento on aina vihamielinen, ja voi hyökätä kutsujan kimppuun heti. Jos se alkaa hävitä taistelun, se pakenee omaan ulottuvuuteensa. Joillakin Kutsuttavilla olennoilla ei ole hyökkäyksiä (esim. parannushengellä).\nLoitsun muita käyttöjä ja seurauksia\nHahmo voi oppia minkä tahansa kutsutun olennon Tosinimen jos onnistuu Hallitse/ Käske (lajia) loitsussa ja kysyy sitä olennolta. Vastaus tavallisesti tulee olennon alitajunnasta. Siten voi myös saada tietoa olennon ominaisuuksista tai kyvyistä. Kukin kysymys vaatii yhden hallinta-tyyppisen loitsun.\nJoskus hahmo haluaa kutsua olennon, jonka hän on kutsunut jo aikaisemminkin. Kysymyksessä voi olla olento, joka on riittävän voimakas tehtävään, mutta ei vaarallisen voimakas hahmon kannalta. Tällöin Kutsurituaali on muuten samanlainen kuin tavallisesti, mutta kutsuttavaa olentoa kutsutaan Tosinimellään. Se on myös turvallisempaa kuin lajin Kutsuminen, koska mitään supervoimakkaita olentoja ei voi tulla.\nHahmo voi menettää Kutsutun olennon hallinnan useilla tavoilla. Olento voidaan tuhota joko sen ominaisuuksien tai kestopisteiden kautta. Milloin tahansa hallintaloitsu katkeaa, olento on vapaa. Toinen hahmo voi riistää sen hallinnan ensin poistamalla hallintaloitsun vastaloitsulla ja sitten heittämällä oman hallintaloitsunsa. Oma hallintaloitsu voidaan heittää myös olentoon, joka on sidottu sellaiseen esineeseen, jota hahmo voi käyttää.\nTavallisia Kutsumisen kohteita\nSeuraavia lajeja kutsutaan tavallisesti Kutsu (laji) loitsulla. Hahmo voi oppia asianmukaisen kutsumisloitsun, jos pelinjohtaja vahvistaa, että se on saatavissa. Aave, alkeisvoima, chonchon, haamu, hellion. kulttihenki, kulttiolento, loitsuhenki, mahtihenki, nymfi, parannushenki, sairaushenki, tunnehenki ja älyhenki.",
+    "aktiivisuus": "Aktiivinen"
+  },
+  {
+    "id": "hr_loitsumatriisilumous",
+    "nimi": "Loitsumatriisilumous",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 1,
+    "kantomatka": "Rituaali (lumous)",
+    "kestoaika": "Rituaali (lumous)",
+    "kuvaus": "Loitsumatriisilla hahmo voi varastoida tiedon loitsusta esineeseen. Kuka tahansa joka koskettaa esineeseen saa tiedon loitsusta, mutta unohtaa sen kun kosketus katkeaa.\nVaikka tämä toimii kaikille taikuuden lajeille, se toimii eri lajeille hieman eri tavoin. Henkitaikuudessa ja velhoudessa hahmo ei unohda loitsua, kun se asetetaan esineeseen. Riimutaikuudessa unohtaa.\nHENKITAIKUUSMATRIISI: Esineen omistaja voi heittää loitsua MHTx5 mahdollisuudella. Samalla kuluu yksi taikapiste loitsun taikapistettä kohden.\nRIIMULOITSUMATRIISI: Esineeseen lumotun riimuloitsun voi heittää 100% mahdollisuudella. Jos heitto ei onnistu (96-00), seuraavalla meleevuorolla voi yrittää uudelleen. Kun se kerran käytetään, käyttäjän on\nvietävä se temppeliin ja hartaudenharjoituksen päätteeksi se latautuu taas. Olennaisesti se toimii kuten pappien loitsut.\nVain papit voivat lumota riimuloitsuja esineisiin. Vain uusiutuvia loitsuja voi lumota. Kun lumous on valmis, pappi menettää sen loitsun, mutta voi uhrata MHT:ia saadakseen sen taas itselleen.\nVELHOLOITSUMATRIISI: Jos hahmo käyttää esinettä, jossa on velholoitsu, hänen on opeteltava sen loitsun heittokyky. Hänen alkukykynsä esineessä olevan loitsun heittoon on hänen taikakykymuutoksensa, ja kyky kasvaa vain kokemuksen kautta. Kyky lasketaan erikseen kutakin eri loitsua kohden. Jos hän myöhemmin oppii kyseisen loitsun ilman esinettä, hän saa suoraan osaamisensa esineen kanssa. Jos hän jo osaa loitsun saadessaan esineen, hän voi käyttää esineloitsua normaalilla kyvyllään siihen loitsuun.\nKun loitsu on lumottu esineeseen, sitä ei voi muuttaa, vaikka muita loitsuja voi lisätä myöhemmin. Yksi uhrattu MHT -piste tarvitaan kutakin esineeseen sidottavaa loitsupistettä kohti. Riimuloitsuja voi pinota esineeseen (loitsua voi myöhemmin vahvistaa) ja muuttuvia henkiloitsuja voi asettaa esineeseen piste kerrallaan. Esim ensin terävyys- 1, terävyys-2 jne. Jos esineeseen heitetään kahdesti terävyys- 1, siinä on kaksi kertaa terävyys-1, mutta ei terävyys-2:ta. Velholoitsua voidaan manipuloida, jotta se olisi voimakkaampi, mutta se vaatii lisää MHT-uhrauksia. Vahvistettu velholoitsu esineessä ei maksa käyttäjälle vapaata ÄLY:ä. Siten jos Nikolos heittää sormuksesta intensiteetti-5 loitsun intensiteetillä 10, hän tarvitsisi vain 5 pistettä vapaata ÄLY:ä.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "hr_panssarointilumous",
+    "nimi": "Panssarointilumous",
+    "tyyppi": "Tehostus",
+    "taikapisteet": 1,
+    "kantomatka": "Rituaali (lumous)",
+    "kestoaika": "Rituaali (lumous)",
+    "kuvaus": "Tällä lumouksella voi lisätä minkä tahansa kohteen panssaripisteitä. Kukin uhrattu MHT-piste antaa kohteelle d3 panssaripistettä. Jos tällä loitsulla annetaan elävälle olennolle panssaripisteitä, loitsu vaikuttaa vain yhteen osumapaikkaan. Tosin uudella loitsulla voi panssaroida toisen osumapaikan jne. Vastaavasti jos tällä loitsulla parannetaan panssaria, se vaikuttaa vain yhtä osumapaikkaa vastaavaan panssariin.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "hr_sidontalumous_",
+    "nimi": "Sidontalumous (laji)",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 3,
+    "kantomatka": "Rituaali (lumous)",
+    "kestoaika": "Rituaali (lumous)",
+    "kuvaus": "Tällä lumouksella sidotaan muiden maailmojen olentoja taikaesineisiin.\nOLENNON SITOMINEN ESINEESEEN: Esineeseen, johon olento sidotaan, täytyy lumota 1 piste sidontalumousta olennon kutakin ominaisuutta kohti. Lumoaja sitoo olennon fyysisen ja henkisen olemuksen esineen sisään. Jos olento on niitä harvoja muiden maailmojen olentoja joilla on KOK, se ei lisää esineen painoa, samoin alkeisvoimat eivät lisää kosteutta, lämpöä jne.\nOlennon sitominen esineeseen sotii sen vaistoja vastaan ja vaatii onnistuneen Käske/Hallitse loitsun toimiakseen. Sidontalumous koskee vain yhtä lajia, siten loitsua jolla yksi olento sidotaan, ei voi käyttää toisenlajista olentoa vastaan. Kun olento on kerran sidottu, se pysyy sidottuna kunnes esine tuhoutuu tai olento vapautetaan. Jos sidottu olento tuhoutuu, se ei merkitse, että esine olisi käyttökelvoton. Toinen\nolento voidaan silloin sitoa esineeseen.\nEsineeseen sidotulla olennolla ei ole tavallisia aisteja ja se ei voi havaita maailmaa ellei se käytä taikuutta. Esineeseen fyysisesti koskettava hahmo voi kommunikoida sen kanssa (jos sitä vastaan ei ole ehtoja), ja voi määrätä olennon käyttämään kykyjään.\nJoillakin olennoilla on kykyjä, joita niiden omistaja voi käyttää kun se on sidottuna esineeseen (älyhenget, taikahenget ja mahtihenget). Monet muut olennot eivät ole kovin tehokkaita esineen sisältä. Ne on paastettävä ulos ollakseen avuksi (aaveet, parannushenget ja alkeisvoimat). Ilman sopivaa hallintaloitsua olento voidaan määrätä tekemään yksi asia, ja sen jälkeen se on vapaa. Jos hallintaloitsua käytetään ennen kuin olento vapautuu, se voidaan määrätä tekemaan useita asioita, ja sen jälkeen palaamaan esineeseen. Hallintaloitsu onnistuu automaattisesti kun sitä käytetään sidottuun olentoon.\nHallintaloitsu on muutenkin vahvempi kuin sidonta esineeseen. Hahmo, joka ei rajoita esineidensä toimintaa ehdoilla, voi huomata, että ovela vastustaja varastaa hänen sidotut olentonsa tai jopa kääntää ne häntä itseään vastaan. Kuka tahansa, joka voi käyttaa esinettä, voi myös heittää loitsuja sen sisään. Fyysistä kosketusta ei tarvita. Tosin hän tarvitsee tavan, jolla näkee olennon (mystinen näkö, sielunäkö tai henkinäkö), jotta voisi kohdistaa loitsunsa siihen.\nEsineeseen sidotut olennot eivät voi saada menetettyjä kestopisteitä takaisin ennen kuin ne palaavat omaan maailmaansa.\nOLENNON SITOMINEN PAIKKAAN: Jos olento sidotaan paikkaan, se ei voi liikkua paikan rajojen ulkopuolelle. MHT-uhrausta tarvitaan kuten esinettä lumotessa ja lisäksi uhraus aluetta koskevasta ehdosta. Alueelle sidottu olento voi käyttää aistejaan.",
+    "aktiivisuus": "Passiivinen"
+  },
+  {
+    "id": "hr_taikapistematriisilumous",
+    "nimi": "Taikapistematriisilumous",
+    "tyyppi": "Työkalu",
+    "taikapisteet": 1,
+    "kantomatka": "Rituaali (lumous)",
+    "kestoaika": "Rituaali (lumous)",
+    "kuvaus": "Kullakin MHT-pisteellä, joka uhrataan tätä lumousta varten voidaan varastoida yksi taikapiste. Näitä pisteitä voi käyttää loitsunheitossa kuka tahansa, joka voi käyttää esinettä. Ne eivät palaudu itsestään käytön jälkeen, mutta käyttäjä voi täyttää ne aina omista taikapisteistään. Yhden taikapisteen syöttö vie yhden meleevuoron. Esineessä ei voi olla taikapisteitä enempää kuin sillä on varastointikykyä.",
+    "aktiivisuus": "Passiivinen"
+  }
+]
